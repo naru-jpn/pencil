@@ -226,6 +226,7 @@
 					430D3FC61D9310E400D4D392 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = XE9C97EHP4;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -431,7 +432,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -451,7 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jpn.naru.Pencil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

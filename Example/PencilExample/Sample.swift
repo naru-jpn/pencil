@@ -25,7 +25,7 @@ struct Sample: CustomReadWriteElement {
     let array: [Int]
     let identifier: String
     
-    static var read: (Components -> Sample?) = { components in
+    static var read: (Components) -> Sample? = { components in
        
         return Sample.init
             =<> components.component(for: "dictionary", defaultValue: ["default":100])

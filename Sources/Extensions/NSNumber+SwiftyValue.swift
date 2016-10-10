@@ -15,9 +15,7 @@ internal extension NSNumber {
     /// Return converted value to swifty value
     var swiftyValue: Any? {
         
-        guard let objCType: String = String.fromCString(self.objCType) else {
-            return nil
-        }
+        let objCType: String = String(cString: self.objCType)
         
         switch objCType {
         case "q":

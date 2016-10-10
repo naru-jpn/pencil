@@ -8,23 +8,21 @@
 
 import Foundation
 
-public typealias MapData = [String: NSData]
-
 /// Protocol to convert data to value
 public protocol Readable {
     
     /// Procedure to restore value from mapped dictionary.
-    static var read: (Components -> Self?) { get }
+    static var read: (Components) -> Self? { get }
 }
 
-enum ReadError: ErrorType {
+enum ReadError: Error {
     case notFound
     case cannotRead
 }
 
 /// Component return value converted from data with key string
 public struct Components {
-    let dictionary: [String: NSData]
+    let dictionary: [String: Data]
 }
 
 // MARK: extension for T
@@ -35,7 +33,7 @@ extension Components {
     /// - returns: ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String) throws -> T {
     
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             throw ReadError.notFound
         }
         
@@ -52,7 +50,7 @@ extension Components {
     /// - returns: ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String, defaultValue: T) -> T {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
@@ -68,7 +66,7 @@ extension Components {
     /// - returns: optional ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String) -> T? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return nil
         }
         
@@ -85,7 +83,7 @@ extension Components {
     /// - returns: optional ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String, defaultValue: T) -> T? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
@@ -105,11 +103,11 @@ extension Components {
     /// - returns: ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String) throws -> [T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             throw ReadError.notFound
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             throw ReadError.cannotRead
         }
         
@@ -122,11 +120,11 @@ extension Components {
     /// - returns: ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String, defaultValue: [T]) -> [T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             return defaultValue
         }
         
@@ -138,11 +136,11 @@ extension Components {
     /// - returns: optional ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String) -> [T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return nil
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             return nil
         }
         
@@ -155,11 +153,11 @@ extension Components {
     /// - returns: optional ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String, defaultValue: [T]) -> [T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             return defaultValue
         }
         
@@ -175,11 +173,11 @@ extension Components {
     /// - returns: ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String) throws -> [String:T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             throw ReadError.notFound
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             throw ReadError.cannotRead
         }
         
@@ -192,11 +190,11 @@ extension Components {
     /// - returns: ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String, defaultValue: [String:T]) -> [String:T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             return defaultValue
         }
         
@@ -208,11 +206,11 @@ extension Components {
     /// - returns: optional ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String) -> [String:T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return nil
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             return nil
         }
         
@@ -225,11 +223,11 @@ extension Components {
     /// - returns: optional ReadWriteElement value
     public func component<T: ReadWriteElement>(for key: String, defaultValue: [String:T]) -> [String:T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             return defaultValue
         }
         
@@ -245,7 +243,7 @@ extension Components {
     /// - returns: CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String) throws -> T {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             throw ReadError.notFound
         }
         
@@ -262,7 +260,7 @@ extension Components {
     /// - returns: CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String, defaultValue: T) -> T {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
@@ -278,7 +276,7 @@ extension Components {
     /// - returns: optional CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String) -> T? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return nil
         }
         
@@ -295,7 +293,7 @@ extension Components {
     /// - returns: optional CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String, defaultValue: T) -> T? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
@@ -315,11 +313,11 @@ extension Components {
     /// - returns: CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String) throws -> [T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             throw ReadError.notFound
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             throw ReadError.cannotRead
         }
         
@@ -332,11 +330,11 @@ extension Components {
     /// - returns: CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String, defaultValue: [T]) -> [T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             return defaultValue
         }
         
@@ -348,11 +346,11 @@ extension Components {
     /// - returns: optional CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String) -> [T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return nil
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             return nil
         }
         
@@ -365,11 +363,11 @@ extension Components {
     /// - returns: optional CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String, defaultValue: [T]) -> [T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let array: [NSData] = [T].devide(data: data), let value = [T].read(array) else {
+        guard let array: [Data] = [T].devide(data: data), let value = [T].read(array) else {
             return defaultValue
         }
         
@@ -385,11 +383,11 @@ extension Components {
     /// - returns: CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String) throws -> [String:T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             throw ReadError.notFound
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             throw ReadError.cannotRead
         }
         
@@ -402,11 +400,11 @@ extension Components {
     /// - returns: CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String, defaultValue: [String:T]) -> [String:T] {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             return defaultValue
         }
         
@@ -418,11 +416,11 @@ extension Components {
     /// - returns: optional CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String) -> [String:T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return nil
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             return nil
         }
         
@@ -435,11 +433,11 @@ extension Components {
     /// - returns: optional CustomReadWriteElement value
     public func component<T: CustomReadWriteElement>(for key: String, defaultValue: [String:T]) -> [String:T]? {
         
-        guard let data: NSData = self.dictionary[key] else {
+        guard let data: Data = self.dictionary[key] else {
             return defaultValue
         }
         
-        guard let dictionary: [String: NSData] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
+        guard let dictionary: [String: Data] = [String:T].devide(data: data), let value = [String:T].read(dictionary) else {
             return defaultValue
         }
         

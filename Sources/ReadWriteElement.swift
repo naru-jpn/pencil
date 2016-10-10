@@ -12,31 +12,31 @@ public protocol ReadWriteElement: ReadWrite { }
 
 extension ReadWriteElement {
 
-    public static func value(from data: NSData) -> Self? {
+    public static func value(from data: Data) -> Self? {
         let value: Self? = Pencil.read(data)
         return value
     }
     
     public func write(to filePath: String, atomically: Bool) -> Bool {
-        let data: NSData = self.data
-        return data.writeToFile(filePath, atomically: atomically)
+        let data: Data = self.data as Data
+        return ((try? data.write(to: URL(fileURLWithPath: filePath), options: atomically ? [.atomic] : [])) != nil)
     }
     
-    public static func devide(data data: NSData) -> Components? {
+    public static func devide(data: Data) -> Components? {
         
-        let length: Int = { (data: NSData) -> Int in
+        let length: Int = { (data: Data) -> Int in
             return Int(UInt8(data: data))
-        }(data.subdata(from: 0, with: sizeof(UInt8)))
+        }(data.subdata(from: 0, with: MemoryLayout<UInt8>.size))
         
-        let name = NSString(data: data.subdata(from: sizeof(UInt8), with: length), encoding: NSUTF8StringEncoding) as? String ?? ""
+        let name = NSString(data: data.subdata(from: MemoryLayout<UInt8>.size, with: length), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         
-        guard name == self.pencilName else {
-            debugPrint("pencil: Type of data is \(name) but applying types is \(self.pencilName).")
+        guard name == self.sPencilName else {
+            debugPrint("pencil: Type of data is \(name) but applying types is \(self.sPencilName).")
             return nil
         }
         
-        let index = sizeof(UInt8) + length
-        let value = data.subdata(from: index, with: (data.length - index))
+        let index = MemoryLayout<UInt8>.size + length
+        let value = data.subdata(from: index, with: (data.count - index))
                 
         return Components(dictionary: ["value": value])
     }

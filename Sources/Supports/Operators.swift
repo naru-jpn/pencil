@@ -8,13 +8,27 @@
 
 import Foundation
 
-infix operator =<> { associativity left precedence 150 }
+precedencegroup CurringPrecedence {
+    associativity: left
+}
 
-infix operator -<> { associativity left precedence 150 }
+precedencegroup CurringDefaultAdoptivePrecedence {
+    associativity: left
+    higherThan: CurringPrecedence
+}
 
-infix operator <<> { associativity left precedence 160 }
+precedencegroup CurringAdoptivePrecedence {
+    associativity: left
+    higherThan: CurringDefaultAdoptivePrecedence
+}
 
-infix operator ?<> { precedence 155 }
+infix operator =<>: CurringPrecedence
+
+infix operator -<>: CurringPrecedence
+
+infix operator <<>: CurringAdoptivePrecedence
+
+infix operator ?<>: CurringDefaultAdoptivePrecedence
 
 // MARK: =<> / Currying & Apply
 
@@ -22,29 +36,29 @@ public func =<><T1, R>(f: (T1) -> R, value: T1) -> R {
     return f(value)
 }
 
-public func =<><T1, T2, R>(f: (T1, T2) -> R, value: T1) -> T2 -> R {
+public func =<><T1, T2, R>(f: @escaping (T1, T2) -> R, value: T1) -> (T2) -> R {
     return { t1 in { t2 in f(t1, t2) } }(value)
 }
 
-public func =<><T1, T2, T3, R>(f: (T1, T2, T3) -> R, value: T1) -> T2 -> T3 -> R {
+public func =<><T1, T2, T3, R>(f: @escaping (T1, T2, T3) -> R, value: T1) -> (T2) -> (T3) -> R {
     return { t1 in { t2 in { t3 in f(t1, t2, t3) } } }(value)
 }
 
-public func =<><T1, T2, T3, T4, R>(f: (T1, T2, T3, T4) -> R, value: T1) -> T2 -> T3 -> T4 -> R {
+public func =<><T1, T2, T3, T4, R>(f: @escaping (T1, T2, T3, T4) -> R, value: T1) -> (T2) -> (T3) -> (T4) -> R {
     return { t1 in { t2 in { t3 in { t4 in f(t1, t2, t3, t4) } } } }(value)
 }
 
 // MARK: -<> / Apply
 
-public func -<> <T1, R>(f: T1 -> R, value: T1) -> R {
+public func -<> <T1, R>(f: (T1) -> R, value: T1) -> R {
     return f(value)
 }
 
-public func -<> <T1, T2, R>(f: T1 -> T2 -> R, value: T1) -> T2 -> R {
+public func -<> <T1, T2, R>(f: (T1) -> (T2) -> R, value: T1) -> (T2) -> R {
     return f(value)
 }
 
-public func -<> <T1, T2, T3, R>(f: T1 -> T2 -> T3 -> R, value: T1) -> T2 -> T3 -> R {
+public func -<> <T1, T2, T3, R>(f: (T1) -> (T2) -> (T3) -> R, value: T1) -> (T2) -> (T3) -> R {
     return f(value)
 }
 

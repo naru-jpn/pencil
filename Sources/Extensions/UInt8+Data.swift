@@ -10,9 +10,9 @@ import Foundation
 
 internal extension UInt8 {
     
-    init(data: NSData) {
+    init(data: Data) {
         var value: UInt8 = 0
-        data.getBytes(&value, length: sizeof(UInt8))
+        (data as NSData).getBytes(&value, length: MemoryLayout<UInt8>.size)
         self = value
     }
 }

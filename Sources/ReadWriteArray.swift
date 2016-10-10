@@ -10,44 +10,44 @@ import Foundation
 
 extension Array where Element: ReadWriteElement {
 
-    public static func value(from data: NSData) -> [Element]? {
+    public static func value(from data: Data) -> [Element]? {
         let value: [Element]? = Pencil.read(data)
         return value
     }
     
-    public static func devide(data data: NSData) -> [NSData]? {
+    public static func devide(data: Data) -> [Data]? {
         
         // check identifier of data
-        let length: Int = { (data: NSData) -> Int in
+        let length: Int = { (data: Data) -> Int in
             return Int(UInt8(data: data))
-        }(data.subdata(from: 0, with: sizeof(UInt8)))
+        }(data.subdata(from: 0, with: MemoryLayout<UInt8>.size))
         
-        let name = NSString(data: data.subdata(from: sizeof(UInt8), with: length), encoding: NSUTF8StringEncoding) as? String ?? ""
+        let name = NSString(data: data.subdata(from: MemoryLayout<UInt8>.size, with: length), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         
-        guard name == self.pencilName else {
-            debugPrint("pencil: Type of data is \(name) but applying type is \(self.pencilName).")
+        guard name == self.sPencilName else {
+            debugPrint("pencil: Type of data is \(name) but applying type is \(self.sPencilName).")
             return nil
         }
         
         // count of element
-        var index = sizeof(UInt8) + length
-        let countOfElement: UInt8 = UInt8(data: data.subdata(from: index, with: sizeof(UInt8)))
+        var index = MemoryLayout<UInt8>.size + length
+        let countOfElement: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
         
         // lengths of elements
-        index = index + sizeof(UInt8)
-        let lengths = data.subdata(from: index, with: sizeof(UInt8)*Int(countOfElement)).splited(with: sizeof(UInt8), repeated: Int(countOfElement)).map {
+        index = index + MemoryLayout<UInt8>.size
+        let lengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfElement)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfElement)).map {
             Int(UInt8(data: $0))
         }
         
         // array of data
-        index = index + sizeof(UInt8)*Int(countOfElement)
-        let values: [NSData] = data.subdata(from: index, with: data.length - index).splited(to: lengths)
+        index = index + MemoryLayout<UInt8>.size*Int(countOfElement)
+        let values: [Data] = data.subdata(from: index, with: data.count - index).splited(to: lengths)
         return values
     }
     
-    public static func read(values: [NSData]) -> [Element]? {
+    public static func read(_ values: [Data]) -> [Element]? {
                 
-        let elements = values.flatMap { (data: NSData) -> Element? in
+        let elements = values.flatMap { (data: Data) -> Element? in
             let element: Element? = Pencil.read(data)
             return element
         }
@@ -57,44 +57,44 @@ extension Array where Element: ReadWriteElement {
 
 extension Array where Element: CustomReadWriteElement {
     
-    public static func value(from data: NSData) -> [Element]? {
+    public static func value(from data: Data) -> [Element]? {
         let value: [Element]? = Pencil.read(data)
         return value
     }
     
-    public static func devide(data data: NSData) -> [NSData]? {
+    public static func devide(data: Data) -> [Data]? {
         
         // check identifier of data
-        let length: Int = { (data: NSData) -> Int in
+        let length: Int = { (data: Data) -> Int in
             return Int(UInt8(data: data))
-        }(data.subdata(from: 0, with: sizeof(UInt8)))
+        }(data.subdata(from: 0, with: MemoryLayout<UInt8>.size))
         
-        let name = NSString(data: data.subdata(from: sizeof(UInt8), with: length), encoding: NSUTF8StringEncoding) as? String ?? ""
+        let name = NSString(data: data.subdata(from: MemoryLayout<UInt8>.size, with: length), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         
-        guard name == self.pencilName else {
-            debugPrint("pencil: Type of data is \(name) but applying type is \(self.pencilName).")
+        guard name == self.sPencilName else {
+            debugPrint("pencil: Type of data is \(name) but applying type is \(self.sPencilName).")
             return nil
         }
         
         // count of element
-        var index = sizeof(UInt8) + length
-        let countOfElement: UInt8 = UInt8(data: data.subdata(from: index, with: sizeof(UInt8)))
+        var index = MemoryLayout<UInt8>.size + length
+        let countOfElement: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
         
         // lengths of elements
-        index = index + sizeof(UInt8)
-        let lengths = data.subdata(from: index, with: sizeof(UInt8)*Int(countOfElement)).splited(with: sizeof(UInt8), repeated: Int(countOfElement)).map {
+        index = index + MemoryLayout<UInt8>.size
+        let lengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfElement)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfElement)).map {
             Int(UInt8(data: $0))
         }
         
         // array of data
-        index = index + sizeof(UInt8)*Int(countOfElement)
-        let values: [NSData] = data.subdata(from: index, with: data.length - index).splited(to: lengths)
+        index = index + MemoryLayout<UInt8>.size*Int(countOfElement)
+        let values: [Data] = data.subdata(from: index, with: data.count - index).splited(to: lengths)
         return values
     }
     
-    public static func read(values: [NSData]) -> [Element]? {
+    public static func read(_ values: [Data]) -> [Element]? {
         
-        let elements = values.flatMap { (data: NSData) -> Element? in
+        let elements = values.flatMap { (data: Data) -> Element? in
             let element: Element? = Pencil.read(data)
             return element
         }
@@ -121,36 +121,36 @@ extension Array: Writable {
     
     public var pencilDataLength: Int {
         let packables: [Writable] = self.writable()
-        let elementsLength: Int = packables.reduce(0, combine: {
-            $0 + sizeof(UInt8) + $1.pencilName.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + $1.pencilDataLength
+        let elementsLength: Int = packables.reduce(0, {
+            $0 + MemoryLayout<UInt8>.size + $1.pencilName.lengthOfBytes(using: String.Encoding.utf8) + $1.pencilDataLength
         })
-        return sizeof(UInt8)*(1+packables.count) + elementsLength
+        return MemoryLayout<UInt8>.size*(1+packables.count) + elementsLength
     }
     
-    public var pencilHead: [NSData] {
+    public var pencilHead: [Data] {
         
         let writables: [Writable] = self.writable()
         
-        let count: NSData = {
+        let count: Data = {
             var num: UInt8 = UInt8(writables.count)
-            return NSData(bytes: &num, length: sizeof(UInt8))
+            return Data(buffer: UnsafeBufferPointer(start: &num, count: 1))//Data(bytes: UnsafePointer<UInt8>(&num), count: MemoryLayout<UInt8>.size)
         }()
         
-        let data: [NSData] = writables.map { (writable: Writable) -> Int in
-            let identifierLength: Int = sizeof(UInt8) + writable.pencilName.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        let data: [Data] = writables.map { (writable: Writable) -> Int in
+            let identifierLength: Int = MemoryLayout<UInt8>.size + writable.pencilName.lengthOfBytes(using: String.Encoding.utf8)
             return identifierLength + writable.pencilDataLength
-        }.map { (length: Int) -> NSData  in
+        }.map { (length: Int) -> Data  in
             var num: UInt8 = UInt8(length)
-            return NSData(bytes: &num, length: sizeof(UInt8))
+            return Data(buffer: UnsafeBufferPointer(start: &num, count: 1))//Data(bytes: UnsafePointer<UInt8>(&num), count: MemoryLayout<UInt8>.size)
         }
         
         return [count] + data
     }
     
-    public var pencilBody: [NSData] {
+    public var pencilBody: [Data] {
         let writables: [Writable] = self.writable()
-        let data: [NSData] = writables.map { element in
-            return element.data
+        let data: [Data] = writables.map { element in
+            return (element.data as Data)
         }
         return data
     }

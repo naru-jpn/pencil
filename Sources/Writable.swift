@@ -24,10 +24,10 @@ public protocol Writable {
 //    public var pencilIdentifier: NSData { get }
     
     /// Metadata for the written data.
-    var pencilHead: [NSData] { get }
+    var pencilHead: [Data] { get }
     
     /// Body data for the written data.
-    var pencilBody: [NSData] { get }
+    var pencilBody: [Data] { get }
 
     /// The whole of written data. (Implemented default behavior.)
 //    var writerData: NSData { get }
@@ -37,7 +37,7 @@ public protocol Writable {
 public extension Writable {
     
     /// name of type
-    public static var pencilName: String {
+    public static var sPencilName: String {
         return "\(self)"
     }
     
@@ -47,24 +47,24 @@ public extension Writable {
     }
     
     /// Identifier of data
-    public var pencilIdentifier: NSData {
+    public var pencilIdentifier: Data {
         // count
         let name: String = self.pencilName
-        var count: UInt8 = UInt8(name.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        var count: UInt8 = UInt8(name.lengthOfBytes(using: String.Encoding.utf8))
         // + identifier string
-        let identifierData: NSMutableData = NSMutableData(bytes: &count, length: sizeof(UInt8))
-        if let data = name.dataUsingEncoding(NSUTF8StringEncoding) {
-            identifierData.appendData(data)
+        let identifierData: NSMutableData = NSMutableData(bytes: &count, length: MemoryLayout<UInt8>.size)
+        if let data = name.data(using: String.Encoding.utf8) {
+            identifierData.append(data)
         }
-        return identifierData
+        return identifierData as Data
     }
     
     /// Whole of written data
-    public var data: NSData {
+    public var data: Data {
         let data: NSMutableData = NSMutableData(data: self.pencilIdentifier)
         for subdata in self.pencilHead + self.pencilBody {
-            data.appendData(subdata)
+            data.append(subdata)
         }
-        return NSData(data: data)
+        return NSData(data: data as Data) as Data
     }
 }

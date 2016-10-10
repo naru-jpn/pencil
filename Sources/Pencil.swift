@@ -10,45 +10,45 @@ import Foundation
 
 public protocol ReadWrite: Writable, Readable { }
 
-public class Pencil {
+open class Pencil {
 
-    public class func read<T: ReadWriteElement>(data: NSData) -> T? {
+    open class func read<T: ReadWriteElement>(_ data: Data) -> T? {
         guard let components: Components = T.devide(data: data) else {
             return nil
         }
         return T.read(components)
     }
     
-    public class func read<T: ReadWriteElement>(data: NSData) -> [T]? {
-        guard let array: [NSData] = [T].devide(data: data) else {
+    open class func read<T: ReadWriteElement>(_ data: Data) -> [T]? {
+        guard let array: [Data] = [T].devide(data: data) else {
             return nil
         }
         return [T].read(array)
     }
     
-    public class func read<T: ReadWriteElement>(data: NSData) -> [String: T]? {
-        guard let dictionary: [String: NSData] = [String: T].devide(data: data) else {
+    open class func read<T: ReadWriteElement>(_ data: Data) -> [String: T]? {
+        guard let dictionary: [String: Data] = [String: T].devide(data: data) else {
             return nil
         }
         return [String: T].read(dictionary)
     }
 
-    public class func read<T: CustomReadWriteElement>(data: NSData) -> T? {
+    open class func read<T: CustomReadWriteElement>(_ data: Data) -> T? {
         guard let components: Components = T.devide(data: data) else {
             return nil
         }
         return T.read(components)
     }
     
-    public class func read<T: CustomReadWriteElement>(data: NSData) -> [T]? {
-        guard let array: [NSData] = [T].devide(data: data) else {
+    open class func read<T: CustomReadWriteElement>(_ data: Data) -> [T]? {
+        guard let array: [Data] = [T].devide(data: data) else {
             return nil
         }
         return [T].read(array)
     }
     
-    public class func read<T: CustomReadWriteElement>(data: NSData) -> [String: T]? {
-        guard let dictionary: [String: NSData] = [String: T].devide(data: data) else {
+    open class func read<T: CustomReadWriteElement>(_ data: Data) -> [String: T]? {
+        guard let dictionary: [String: Data] = [String: T].devide(data: data) else {
             return nil
         }
         return [String: T].read(dictionary)
