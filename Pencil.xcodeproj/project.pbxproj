@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		430D3FC81D9310E400D4D392 /* Pencil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430D3FBE1D9310E400D4D392 /* Pencil.framework */; };
-		430D3FCD1D9310E400D4D392 /* PencilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FCC1D9310E400D4D392 /* PencilTests.swift */; };
 		430D3FCF1D9310E400D4D392 /* Pencil.h in Headers */ = {isa = PBXBuildFile; fileRef = 430D3FC11D9310E400D4D392 /* Pencil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430D3FFC1D9313B700D4D392 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFB1D9313B700D4D392 /* Pencil.swift */; };
 		430D3FFD1D9313B700D4D392 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFB1D9313B700D4D392 /* Pencil.swift */; };
@@ -50,7 +49,6 @@
 		430D3FC11D9310E400D4D392 /* Pencil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pencil.h; sourceTree = "<group>"; };
 		430D3FC21D9310E400D4D392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430D3FC71D9310E400D4D392 /* PencilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PencilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		430D3FCC1D9310E400D4D392 /* PencilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilTests.swift; sourceTree = "<group>"; };
 		430D3FCE1D9310E400D4D392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430D3FFB1D9313B700D4D392 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		430D3FFE1D9313C700D4D392 /* Writable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writable.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 		430D3FCB1D9310E400D4D392 /* PencilTests */ = {
 			isa = PBXGroup;
 			children = (
-				430D3FCC1D9310E400D4D392 /* PencilTests.swift */,
 				430D3FCE1D9310E400D4D392 /* Info.plist */,
 			);
 			path = PencilTests;
@@ -229,7 +226,7 @@
 				TargetAttributes = {
 					430D3FBD1D9310E300D4D392 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = XE9C97EHP4;
+						DevelopmentTeam = QTG7MUN42X;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -308,7 +305,6 @@
 				430D40161D9314D500D4D392 /* UInt8+Data.swift in Sources */,
 				430D40091D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */,
 				430D3FFD1D9313B700D4D392 /* Pencil.swift in Sources */,
-				430D3FCD1D9310E400D4D392 /* PencilTests.swift in Sources */,
 				430D400C1D9313FF00D4D392 /* Readable.swift in Sources */,
 				430D40121D9314D500D4D392 /* NSData+Split.swift in Sources */,
 				430D40191D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */,
@@ -431,7 +427,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = XE9C97EHP4;
+				DEVELOPMENT_TEAM = QTG7MUN42X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -452,7 +448,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = XE9C97EHP4;
+				DEVELOPMENT_TEAM = QTG7MUN42X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
