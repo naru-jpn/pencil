@@ -10,27 +10,23 @@
 		430D3FC81D9310E400D4D392 /* Pencil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430D3FBE1D9310E400D4D392 /* Pencil.framework */; };
 		430D3FCF1D9310E400D4D392 /* Pencil.h in Headers */ = {isa = PBXBuildFile; fileRef = 430D3FC11D9310E400D4D392 /* Pencil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430D3FFC1D9313B700D4D392 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFB1D9313B700D4D392 /* Pencil.swift */; };
-		430D3FFD1D9313B700D4D392 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFB1D9313B700D4D392 /* Pencil.swift */; };
 		430D3FFF1D9313C700D4D392 /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFE1D9313C700D4D392 /* Writable.swift */; };
-		430D40001D9313C700D4D392 /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFE1D9313C700D4D392 /* Writable.swift */; };
 		430D40021D9313D600D4D392 /* ReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40011D9313D600D4D392 /* ReadWriteElement.swift */; };
-		430D40031D9313D600D4D392 /* ReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40011D9313D600D4D392 /* ReadWriteElement.swift */; };
 		430D40051D9313E000D4D392 /* ReadWriteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40041D9313E000D4D392 /* ReadWriteArray.swift */; };
-		430D40061D9313E000D4D392 /* ReadWriteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40041D9313E000D4D392 /* ReadWriteArray.swift */; };
 		430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */; };
-		430D40091D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */; };
 		430D400B1D9313FF00D4D392 /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400A1D9313FF00D4D392 /* Readable.swift */; };
-		430D400C1D9313FF00D4D392 /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400A1D9313FF00D4D392 /* Readable.swift */; };
 		430D40111D9314D500D4D392 /* NSData+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400E1D9314D500D4D392 /* NSData+Split.swift */; };
-		430D40121D9314D500D4D392 /* NSData+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400E1D9314D500D4D392 /* NSData+Split.swift */; };
 		430D40131D9314D500D4D392 /* NSNumber+SwiftyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400F1D9314D500D4D392 /* NSNumber+SwiftyValue.swift */; };
-		430D40141D9314D500D4D392 /* NSNumber+SwiftyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400F1D9314D500D4D392 /* NSNumber+SwiftyValue.swift */; };
 		430D40151D9314D500D4D392 /* UInt8+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40101D9314D500D4D392 /* UInt8+Data.swift */; };
-		430D40161D9314D500D4D392 /* UInt8+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40101D9314D500D4D392 /* UInt8+Data.swift */; };
 		430D40181D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */; };
-		430D40191D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */; };
 		4360C4A41DAFB98C00D371E1 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4A31DAFB98C00D371E1 /* Int.swift */; };
 		4360C4A61DAFB99F00D371E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4A51DAFB99F00D371E1 /* String.swift */; };
+		4360C4AD1DAFBEF900D371E1 /* IntSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */; };
+		4360C4B01DAFBF2100D371E1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4360C4AF1DAFBF2100D371E1 /* Nimble.framework */; };
+		4360C4B21DAFBF2300D371E1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4360C4B11DAFBF2300D371E1 /* Quick.framework */; };
+		4360C4B41DAFBF6600D371E1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4360C4B11DAFBF2300D371E1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4360C4B51DAFBF6A00D371E1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4360C4AF1DAFBF2100D371E1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4360C4BA1DAFC41500D371E1 /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4B91DAFC41500D371E1 /* StringSpec.swift */; };
 		43AF4C0E1D9342E300B5FD1E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4C0D1D9342E300B5FD1E /* Operators.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +39,20 @@
 			remoteInfo = Pencil;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4360C4B31DAFBF4400D371E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4360C4B51DAFBF6A00D371E1 /* Nimble.framework in CopyFiles */,
+				4360C4B41DAFBF6600D371E1 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		430D3FBE1D9310E400D4D392 /* Pencil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pencil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +72,10 @@
 		430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReadWriteElement.swift; sourceTree = "<group>"; };
 		4360C4A31DAFB98C00D371E1 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		4360C4A51DAFB99F00D371E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntSpec.swift; sourceTree = "<group>"; };
+		4360C4AF1DAFBF2100D371E1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		4360C4B11DAFBF2300D371E1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		4360C4B91DAFC41500D371E1 /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSpec.swift; sourceTree = "<group>"; };
 		43AF4C0D1D9342E300B5FD1E /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +92,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				430D3FC81D9310E400D4D392 /* Pencil.framework in Frameworks */,
+				4360C4B21DAFBF2300D371E1 /* Quick.framework in Frameworks */,
+				4360C4B01DAFBF2100D371E1 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +107,7 @@
 				430D3FD81D93113800D4D392 /* Sources */,
 				430D3FCB1D9310E400D4D392 /* PencilTests */,
 				430D3FBF1D9310E400D4D392 /* Products */,
+				4360C4AE1DAFBF2100D371E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				430D3FCE1D9310E400D4D392 /* Info.plist */,
+				4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */,
+				4360C4B91DAFC41500D371E1 /* StringSpec.swift */,
 			);
 			path = PencilTests;
 			sourceTree = "<group>";
@@ -154,6 +173,15 @@
 				4360C4A51DAFB99F00D371E1 /* String.swift */,
 			);
 			path = StandardValues;
+			sourceTree = "<group>";
+		};
+		4360C4AE1DAFBF2100D371E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4360C4B11DAFBF2300D371E1 /* Quick.framework */,
+				4360C4AF1DAFBF2100D371E1 /* Nimble.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		43AF4C0C1D9342E300B5FD1E /* Supports */ = {
@@ -203,6 +231,7 @@
 				430D3FC31D9310E400D4D392 /* Sources */,
 				430D3FC41D9310E400D4D392 /* Frameworks */,
 				430D3FC51D9310E400D4D392 /* Resources */,
+				4360C4B31DAFBF4400D371E1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -298,16 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				430D40141D9314D500D4D392 /* NSNumber+SwiftyValue.swift in Sources */,
-				430D40061D9313E000D4D392 /* ReadWriteArray.swift in Sources */,
-				430D40031D9313D600D4D392 /* ReadWriteElement.swift in Sources */,
-				430D40001D9313C700D4D392 /* Writable.swift in Sources */,
-				430D40161D9314D500D4D392 /* UInt8+Data.swift in Sources */,
-				430D40091D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */,
-				430D3FFD1D9313B700D4D392 /* Pencil.swift in Sources */,
-				430D400C1D9313FF00D4D392 /* Readable.swift in Sources */,
-				430D40121D9314D500D4D392 /* NSData+Split.swift in Sources */,
-				430D40191D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */,
+				4360C4AD1DAFBEF900D371E1 /* IntSpec.swift in Sources */,
+				4360C4BA1DAFC41500D371E1 /* StringSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +488,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XE9C97EHP4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PencilTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jpn.naru.PencilTests;
@@ -480,6 +505,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XE9C97EHP4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PencilTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jpn.naru.PencilTests;
