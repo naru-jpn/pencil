@@ -77,6 +77,16 @@ extension Dictionary where Value: ReadWriteElement {
 
 extension Dictionary where Value: CustomReadWriteElement {
     
+    public static func value(from url: URL, options: Data.ReadingOptions = []) -> [String: Value]? {
+        do {
+            let data: Data = try Data(contentsOf: url, options: options)
+            let value: [String: Value]? = self.value(from: data)
+            return value
+        } catch {
+            return nil
+        }
+    }
+    
     public static func value(from data: Data) -> [String: Value]? {
         let value: [String: Value]? = Pencil.read(data)
         return value

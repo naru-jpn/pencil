@@ -12,6 +12,16 @@ public protocol CustomReadWriteElement: ReadWrite { }
 
 extension CustomReadWriteElement {
 
+    public static func value(from url: URL, options: Data.ReadingOptions = []) -> Self? {
+        do {
+            let data: Data = try Data(contentsOf: url, options: options)
+            let value: Self? = self.value(from: data)
+            return value
+        } catch {
+            return nil
+        }
+    }
+
     public static func value(from data: Data) -> Self? {
         let value: Self? = Pencil.read(data)
         return value

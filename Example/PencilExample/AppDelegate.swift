@@ -16,14 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
         let sample: Sample = Sample(dictionary: ["key1": 2, "key2": 3], array: [5, 6, 103], identifier: "identifier of sample")
+                
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("obj")
         
-        let data = sample.data
+        _ = sample.write(to: fileURL)
         
-        let readSample = Sample.value(from: data)
-        
-        debugPrint("\(readSample)")
-        
-        _ = MemoryLayout<Sample>.size
+        debugPrint("\(Sample.value(from: fileURL))")
         
         return true
     }

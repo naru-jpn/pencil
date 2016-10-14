@@ -12,16 +12,16 @@ import Foundation
 public protocol Writable {
     
     /// Name. (Implemented default behavior.)
-//    static var pencilName: String { get }
+    static var sPencilName: String { get }
     
     /// Name. (Implemented default behavior.)
-//    var pencilName: String { get }
+    var pencilName: String { get }
     
     /// Number of bytes of the whole written data.
     var pencilDataLength: Int { get }
     
     /// Identifier of data.
-//    public var pencilIdentifier: NSData { get }
+    var pencilIdentifier: Data { get }
     
     /// Metadata for the written data.
     var pencilHead: [Data] { get }
@@ -30,18 +30,29 @@ public protocol Writable {
     var pencilBody: [Data] { get }
 
     /// The whole of written data. (Implemented default behavior.)
-//    var writerData: NSData { get }
+    var data: Data { get }
 }
 
 // Default implementations for the Writable.
 public extension Writable {
     
-    /// name of type
+    /// write
+    public func write(to url: URL, options: Data.WritingOptions = []) -> Bool {
+        do {
+            try self.data.write(to: url, options: options)
+            return true
+        } catch {
+            debugPrint("Failed to write data to file: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    /// name
     public static var sPencilName: String {
         return "\(self)"
     }
     
-    /// name of type
+    /// name
     public var pencilName: String {
         return "\(Mirror(reflecting: self).subjectType)"
     }

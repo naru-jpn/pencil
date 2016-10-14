@@ -12,14 +12,19 @@ public protocol ReadWriteElement: ReadWrite { }
 
 extension ReadWriteElement {
 
+    public static func value(from url: URL, options: Data.ReadingOptions = []) -> Self? {
+        do {
+            let data: Data = try Data(contentsOf: url, options: options)
+            let value: Self? = self.value(from: data)
+            return value
+        } catch {
+            return nil
+        }
+    }
+    
     public static func value(from data: Data) -> Self? {
         let value: Self? = Pencil.read(data)
         return value
-    }
-    
-    public func write(to filePath: String, atomically: Bool) -> Bool {
-        let data: Data = self.data as Data
-        return ((try? data.write(to: URL(fileURLWithPath: filePath), options: atomically ? [.atomic] : [])) != nil)
     }
     
     public static func devide(data: Data) -> Components? {

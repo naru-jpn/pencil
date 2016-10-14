@@ -10,6 +10,16 @@ import Foundation
 
 extension Array where Element: ReadWriteElement {
 
+    public static func value(from url: URL, options: Data.ReadingOptions = []) -> [Element]? {
+        do {
+            let data: Data = try Data(contentsOf: url, options: options)
+            let value: [Element]? = self.value(from: data)
+            return value
+        } catch {
+            return nil
+        }
+    }
+    
     public static func value(from data: Data) -> [Element]? {
         let value: [Element]? = Pencil.read(data)
         return value
