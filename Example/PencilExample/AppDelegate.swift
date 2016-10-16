@@ -15,15 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
-        let sample: Sample = Sample(dictionary: ["key1": 2, "key2": 3], array: [5, 6, 103], identifier: "identifier of sample")
-                
-        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("obj")
-        
-        _ = sample.write(to: fileURL)
-        
-        debugPrint("\(Sample.value(from: fileURL))")
+        self.example()
         
         return true
+    }
+    
+    func example() {
+    
+        guard let url = Directory.Documents?.append(path: "int.data") else {
+            return
+        }
+        
+        let num: Int = 2016
+        
+        /// write to file path
+        _ = num.write(to: url)
+        
+        /// read from file path
+        debugPrint("result: \(Int.value(from: url))")
     }
     
     
