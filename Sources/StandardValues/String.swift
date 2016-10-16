@@ -11,11 +11,11 @@ import Foundation
 extension String: ReadWriteElement {
     
     public var pencilDataLength: Int {
-        return MemoryLayout<UInt8>.size + self.lengthOfBytes(using: String.Encoding.utf8)
+        return MemoryLayout<UInt16>.size + self.lengthOfBytes(using: String.Encoding.utf8)
     }
     
     public var pencilHead: [Data] {
-        var count: UInt8 = UInt8(self.lengthOfBytes(using: String.Encoding.utf8))
+        var count: UInt16 = UInt16(self.lengthOfBytes(using: String.Encoding.utf8))
         return [Data(buffer: UnsafeBufferPointer(start: &count, count: 1))]
     }
     
@@ -32,8 +32,8 @@ extension String: ReadWriteElement {
             return nil
         }
         
-        let length: UInt8 = UInt8(data: data.subdata(in: 0..<MemoryLayout<UInt8>.size))
-        let subdata = data.subdata(from: MemoryLayout<UInt8>.size, with: Int(length))
+        let length: UInt16 = UInt16(data: data.subdata(in: 0..<MemoryLayout<UInt16>.size))
+        let subdata = data.subdata(from: MemoryLayout<UInt16>.size, with: Int(length))
         return NSString(data: subdata, encoding: String.Encoding.utf8.rawValue) as? String
     }
 }
