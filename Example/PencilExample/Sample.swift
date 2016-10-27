@@ -8,17 +8,6 @@
 
 import Foundation
 
-//struct Child: CustomReadWriteElement {
-//    
-//    let index: Int
-//    
-//    static var read: (Components -> Child?) = { components in
-//        
-//        return Child.init
-//            =<> components <<> "index" ?<> 0
-//    }
-//}
-
 struct Sample: CustomReadWriteElement {
     
     let dictionary: [String: Int]

@@ -11,6 +11,9 @@
 		430D3FE81D9311C800D4D392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FE71D9311C800D4D392 /* ViewController.swift */; };
 		430D3FED1D9311C800D4D392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430D3FEC1D9311C800D4D392 /* Assets.xcassets */; };
 		430D3FF01D9311C800D4D392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430D3FEE1D9311C800D4D392 /* LaunchScreen.storyboard */; };
+		430F96991DC247D00069F74B /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F96981DC247D00069F74B /* UInt.swift */; };
+		430F969B1DC247E30069F74B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F969A1DC247E30069F74B /* Float.swift */; };
+		430F969D1DC247E90069F74B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F969C1DC247E90069F74B /* Double.swift */; };
 		4360C4AA1DAFBABF00D371E1 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4A81DAFBABF00D371E1 /* Int.swift */; };
 		4360C4AB1DAFBABF00D371E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4A91DAFBABF00D371E1 /* String.swift */; };
 		438DED9A1DB3D690002742F1 /* UInt8+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DED991DB3D690002742F1 /* UInt8+Data.swift */; };
@@ -36,6 +39,9 @@
 		430D3FEC1D9311C800D4D392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		430D3FEF1D9311C800D4D392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		430D3FF11D9311C800D4D392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		430F96981DC247D00069F74B /* UInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt.swift; sourceTree = "<group>"; };
+		430F969A1DC247E30069F74B /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		430F969C1DC247E90069F74B /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		4360C4A81DAFBABF00D371E1 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		4360C4A91DAFBABF00D371E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		438DED991DB3D690002742F1 /* UInt8+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt8+Data.swift"; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				4360C4A81DAFBABF00D371E1 /* Int.swift */,
+				430F96981DC247D00069F74B /* UInt.swift */,
+				430F969A1DC247E30069F74B /* Float.swift */,
+				430F969C1DC247E90069F74B /* Double.swift */,
 				4360C4A91DAFBABF00D371E1 /* String.swift */,
 			);
 			path = StandardValues;
@@ -135,9 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				43AF4BEE1D9331FC00B5FD1E /* NSData+Split.swift */,
-				43AF4BEF1D9331FC00B5FD1E /* NSNumber+SwiftyValue.swift */,
 				438DED991DB3D690002742F1 /* UInt8+Data.swift */,
 				43AF4BF01D9331FC00B5FD1E /* UInt16+Data.swift */,
+				43AF4BEF1D9331FC00B5FD1E /* NSNumber+SwiftyValue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,9 +244,12 @@
 				43AF4C0B1D9342D700B5FD1E /* Operators.swift in Sources */,
 				43AF4BFB1D9331FC00B5FD1E /* UInt16+Data.swift in Sources */,
 				43AF4BFF1D9331FC00B5FD1E /* ReadWriteDictionary.swift in Sources */,
+				430F96991DC247D00069F74B /* UInt.swift in Sources */,
+				430F969D1DC247E90069F74B /* Double.swift in Sources */,
 				43AF4BF91D9331FC00B5FD1E /* NSData+Split.swift in Sources */,
 				4360C4AA1DAFBABF00D371E1 /* Int.swift in Sources */,
 				43AF4BFC1D9331FC00B5FD1E /* Pencil.swift in Sources */,
+				430F969B1DC247E30069F74B /* Float.swift in Sources */,
 				4360C4AB1DAFBABF00D371E1 /* String.swift in Sources */,
 				438DED9A1DB3D690002742F1 /* UInt8+Data.swift in Sources */,
 				43AF4C021D9331FC00B5FD1E /* Writable.swift in Sources */,
