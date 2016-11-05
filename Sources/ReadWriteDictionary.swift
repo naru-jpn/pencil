@@ -9,6 +9,16 @@
 import Foundation
 
 extension Dictionary where Value: ReadWriteElement {
+    
+    public static func value(from url: URL, options: Data.ReadingOptions = []) -> [String: Value]? {
+        do {
+            let data: Data = try Data(contentsOf: url, options: options)
+            let value: [String: Value]? = self.value(from: data)
+            return value
+        } catch {
+            return nil
+        }
+    }
 
     public static func value(from data: Data) -> [String: Value]? {
         let value: [String: Value]? = Pencil.read(data)
