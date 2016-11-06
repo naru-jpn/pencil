@@ -41,23 +41,23 @@ extension Dictionary where Value: ReadWriteElement {
         
         // count of pair
         index = index + Int(nameLength)
-        let countOfPair: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
+        let countOfPair: UInt16 = UInt16(data: data.subdata(from: index, with: MemoryLayout<UInt16>.size))
         
         // lengths of key strings
-        index = index + MemoryLayout<UInt8>.size
-        let keyLengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfPair)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt16>.size
+        let keyLengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfPair)).map {
+            Int(UInt32(data: $0))
         }
         let totalKeyLength: Int = keyLengths.reduce(0, +)
         // lengths of values
-        index = index + MemoryLayout<UInt8>.size*Int(countOfPair)
-        let valueLengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfPair)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
+        let valueLengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfPair)).map {
+            Int(UInt32(data: $0))
         }
         let totalValueLength: Int = valueLengths.reduce(0, +)
         
         // key strings
-        index = index + MemoryLayout<UInt8>.size*Int(countOfPair)
+        index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
         let keys: [String] = data.subdata(from: index, with: totalKeyLength).splited(to: keyLengths).map {
             NSString(data: $0, encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         }
@@ -118,23 +118,23 @@ extension Dictionary where Value: CustomReadWriteElement {
         
         // count of pair
         index = index + Int(nameLength)
-        let countOfPair: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
+        let countOfPair: UInt16 = UInt16(data: data.subdata(from: index, with: MemoryLayout<UInt16>.size))
         
         // lengths of key strings
-        index = index + MemoryLayout<UInt8>.size
-        let keyLengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfPair)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt16>.size
+        let keyLengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfPair)).map {
+            Int(UInt32(data: $0))
         }
         let totalKeyLength: Int = keyLengths.reduce(0, +)
         // lengths of values
-        index = index + MemoryLayout<UInt8>.size*Int(countOfPair)
-        let valueLengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfPair)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
+        let valueLengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfPair)).map {
+            Int(UInt32(data: $0))
         }
         let totalValueLength: Int = valueLengths.reduce(0, +)
         
         // key strings
-        index = index + MemoryLayout<UInt8>.size*Int(countOfPair)
+        index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
         let keys: [String] = data.subdata(from: index, with: totalKeyLength).splited(to: keyLengths).map {
             NSString(data: $0, encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         }
@@ -200,7 +200,7 @@ extension Dictionary: Writable {
             return length + identifierLength + element.pencilDataLength
         }
         
-        return MemoryLayout<UInt8>.size*(1 + writable.keys.count*2) + keysLength + valuesLength
+        return MemoryLayout<UInt16>.size + MemoryLayout<UInt32>.size*writable.keys.count*2 + keysLength + valuesLength
     }
     
     public var pencilHead: [Data] {
@@ -210,16 +210,16 @@ extension Dictionary: Writable {
         let sortedValues: [Writable] = sortedKeys.flatMap { writable[$0] }
         
         let count: Data = {
-            var num: UInt8 = UInt8(writable.keys.count)
+            var num: UInt16 = UInt16(writable.keys.count)
             return Data(buffer: UnsafeBufferPointer(start: &num, count: 1))//Data(bytes: UnsafePointer<UInt8>(&num), count: MemoryLayout<UInt8>.size)
         }()
         let keys: [Data] = sortedKeys.map {
-            var length: UInt8 = UInt8($0.lengthOfBytes(using: String.Encoding.utf8))
+            var length: UInt32 = UInt32($0.lengthOfBytes(using: String.Encoding.utf8))
             return Data(buffer: UnsafeBufferPointer(start: &length, count: 1))//Data(bytes: UnsafePointer<UInt8>(&length), count: MemoryLayout<UInt8>.size)
         }
         let values: [Data] = sortedValues.map {
             let identifierLength: Int = MemoryLayout<UInt8>.size + $0.pencilName.lengthOfBytes(using: String.Encoding.utf8)
-            var length: UInt8 = UInt8(identifierLength + $0.pencilDataLength)
+            var length: UInt32 = UInt32(identifierLength + $0.pencilDataLength)
             return Data(buffer: UnsafeBufferPointer(start: &length, count: 1))//Data(bytes: UnsafePointer<UInt8>(&length), count: MemoryLayout<UInt8>.size)
         }
         

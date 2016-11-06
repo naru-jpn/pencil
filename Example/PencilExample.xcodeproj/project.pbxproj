@@ -18,6 +18,7 @@
 		4360C4AB1DAFBABF00D371E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4A91DAFBABF00D371E1 /* String.swift */; };
 		438DED9A1DB3D690002742F1 /* UInt8+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DED991DB3D690002742F1 /* UInt8+Data.swift */; };
 		4395164F1DB1227100948E46 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395164E1DB1227100948E46 /* Directory.swift */; };
+		4396EC6C1DCF625C00B2E126 /* UInt32+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396EC6B1DCF625C00B2E126 /* UInt32+Data.swift */; };
 		43AF4BF81D9331FC00B5FD1E /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4BEC1D9331FC00B5FD1E /* CustomReadWriteElement.swift */; };
 		43AF4BF91D9331FC00B5FD1E /* NSData+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4BEE1D9331FC00B5FD1E /* NSData+Split.swift */; };
 		43AF4BFA1D9331FC00B5FD1E /* NSNumber+SwiftyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4BEF1D9331FC00B5FD1E /* NSNumber+SwiftyValue.swift */; };
@@ -46,6 +47,7 @@
 		4360C4A91DAFBABF00D371E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		438DED991DB3D690002742F1 /* UInt8+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt8+Data.swift"; sourceTree = "<group>"; };
 		4395164E1DB1227100948E46 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		4396EC6B1DCF625C00B2E126 /* UInt32+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt32+Data.swift"; sourceTree = "<group>"; };
 		43AF4BEC1D9331FC00B5FD1E /* CustomReadWriteElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReadWriteElement.swift; sourceTree = "<group>"; };
 		43AF4BEE1D9331FC00B5FD1E /* NSData+Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Split.swift"; sourceTree = "<group>"; };
 		43AF4BEF1D9331FC00B5FD1E /* NSNumber+SwiftyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+SwiftyValue.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				43AF4BEE1D9331FC00B5FD1E /* NSData+Split.swift */,
 				438DED991DB3D690002742F1 /* UInt8+Data.swift */,
 				43AF4BF01D9331FC00B5FD1E /* UInt16+Data.swift */,
+				4396EC6B1DCF625C00B2E126 /* UInt32+Data.swift */,
 				43AF4BEF1D9331FC00B5FD1E /* NSNumber+SwiftyValue.swift */,
 			);
 			path = Extensions;
@@ -240,6 +243,7 @@
 				43AF4C041D93408A00B5FD1E /* Sample.swift in Sources */,
 				43AF4BF81D9331FC00B5FD1E /* CustomReadWriteElement.swift in Sources */,
 				43AF4BFE1D9331FC00B5FD1E /* ReadWriteArray.swift in Sources */,
+				4396EC6C1DCF625C00B2E126 /* UInt32+Data.swift in Sources */,
 				430D3FE61D9311C800D4D392 /* AppDelegate.swift in Sources */,
 				43AF4C0B1D9342D700B5FD1E /* Operators.swift in Sources */,
 				43AF4BFB1D9331FC00B5FD1E /* UInt16+Data.swift in Sources */,

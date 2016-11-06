@@ -33,6 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// read from file path
         debugPrint("result: \(Int.value(from: url))")
+        
+        guard let sampleurl = Directory.Documents?.append(path: "sample.data") else {
+            return
+        }
+        
+        // sample test
+        let sample: Sample = Sample(dictionary: ["a": 10, "b": 10, "c": 10, "d": 10, "e": 10, "f": 10, "g": 10, "h": 10, "i": 10, "j": 10], array: [2, 3], identifier: "id")
+        let samples: [Sample] = [sample, sample, sample]
+        _ = samples.write(to: sampleurl)
+        let readSamples: [Sample]? = [Sample].value(from: sampleurl)
+        debugPrint("samples: \(readSamples)")
     }
     
     

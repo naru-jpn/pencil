@@ -34,6 +34,7 @@
 		438DEDA61DB3E552002742F1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DEDA41DB3E543002742F1 /* Double.swift */; };
 		438DEDA81DB3E576002742F1 /* FloatSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DEDA71DB3E576002742F1 /* FloatSpec.swift */; };
 		438DEDAA1DB3E627002742F1 /* DoubleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DEDA91DB3E627002742F1 /* DoubleSpec.swift */; };
+		4396EC6E1DCF6CC400B2E126 /* UInt32+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396EC6D1DCF6CC400B2E126 /* UInt32+Data.swift */; };
 		43AF4C0E1D9342E300B5FD1E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4C0D1D9342E300B5FD1E /* Operators.swift */; };
 		43B6CC291DBD031800C145E9 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6CC281DBD031800C145E9 /* Directory.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		438DEDA41DB3E543002742F1 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		438DEDA71DB3E576002742F1 /* FloatSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatSpec.swift; sourceTree = "<group>"; };
 		438DEDA91DB3E627002742F1 /* DoubleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSpec.swift; sourceTree = "<group>"; };
+		4396EC6D1DCF6CC400B2E126 /* UInt32+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt32+Data.swift"; sourceTree = "<group>"; };
 		43AF4C0D1D9342E300B5FD1E /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		43B6CC281DBD031800C145E9 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 				430D400E1D9314D500D4D392 /* NSData+Split.swift */,
 				430D40101D9314D500D4D392 /* UInt8+Data.swift */,
 				438DED9B1DB3DA1A002742F1 /* UInt16+Data.swift */,
+				4396EC6D1DCF6CC400B2E126 /* UInt32+Data.swift */,
 				430D400F1D9314D500D4D392 /* NSNumber+SwiftyValue.swift */,
 			);
 			path = Extensions;
@@ -341,6 +344,7 @@
 				430D40181D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */,
 				430D3FFF1D9313C700D4D392 /* Writable.swift in Sources */,
 				430D400B1D9313FF00D4D392 /* Readable.swift in Sources */,
+				4396EC6E1DCF6CC400B2E126 /* UInt32+Data.swift in Sources */,
 				438DED9C1DB3DA1A002742F1 /* UInt16+Data.swift in Sources */,
 				430D40131D9314D500D4D392 /* NSNumber+SwiftyValue.swift in Sources */,
 				430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */,

@@ -42,23 +42,23 @@ extension CustomReadWriteElement {
         
         // count of pair
         index = index + Int(nameLength)
-        let countOfPair: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
+        let countOfPair: UInt16 = UInt16(data: data.subdata(from: index, with: MemoryLayout<UInt16>.size))
         
         // lengths of key strings
-        index = index + MemoryLayout<UInt8>.size
-        let keyLengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfPair)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt16>.size
+        let keyLengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfPair)).map {
+            Int(UInt32(data: $0))
         }
         let totalKeyLength: Int = keyLengths.reduce(0, +)
         // lengths of values
-        index = index + MemoryLayout<UInt8>.size*Int(countOfPair)
-        let valueLengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfPair)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
+        let valueLengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfPair)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfPair)).map {
+            Int(UInt32(data: $0))
         }
         let totalValueLength: Int = valueLengths.reduce(0, +)
         
         // key strings
-        index = index + MemoryLayout<UInt8>.size*Int(countOfPair)
+        index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
         let keys: [String] = data.subdata(from: index, with: totalKeyLength).splited(to: keyLengths).map {
             NSString(data: $0, encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         }

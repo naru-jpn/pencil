@@ -41,16 +41,16 @@ extension Array where Element: ReadWriteElement {
         
         // count of element
         var index = MemoryLayout<UInt8>.size + length
-        let countOfElement: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
+        let countOfElement: UInt16 = UInt16(data: data.subdata(from: index, with: MemoryLayout<UInt16>.size))
         
         // lengths of elements
-        index = index + MemoryLayout<UInt8>.size
-        let lengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfElement)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfElement)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt16>.size
+        let lengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfElement)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfElement)).map {
+            Int(UInt32(data: $0))
         }
         
         // array of data
-        index = index + MemoryLayout<UInt8>.size*Int(countOfElement)
+        index = index + MemoryLayout<UInt32>.size*Int(countOfElement)
         let values: [Data] = data.subdata(from: index, with: data.count - index).splited(to: lengths)
         return values
     }
@@ -98,16 +98,16 @@ extension Array where Element: CustomReadWriteElement {
         
         // count of element
         var index = MemoryLayout<UInt8>.size + length
-        let countOfElement: UInt8 = UInt8(data: data.subdata(from: index, with: MemoryLayout<UInt8>.size))
+        let countOfElement: UInt16 = UInt16(data: data.subdata(from: index, with: MemoryLayout<UInt16>.size))
         
         // lengths of elements
-        index = index + MemoryLayout<UInt8>.size
-        let lengths = data.subdata(from: index, with: MemoryLayout<UInt8>.size*Int(countOfElement)).splited(with: MemoryLayout<UInt8>.size, repeated: Int(countOfElement)).map {
-            Int(UInt8(data: $0))
+        index = index + MemoryLayout<UInt16>.size
+        let lengths = data.subdata(from: index, with: MemoryLayout<UInt32>.size*Int(countOfElement)).splited(with: MemoryLayout<UInt32>.size, repeated: Int(countOfElement)).map {
+            Int(UInt32(data: $0))
         }
         
         // array of data
-        index = index + MemoryLayout<UInt8>.size*Int(countOfElement)
+        index = index + MemoryLayout<UInt32>.size*Int(countOfElement)
         let values: [Data] = data.subdata(from: index, with: data.count - index).splited(to: lengths)
         return values
     }
@@ -144,7 +144,7 @@ extension Array: Writable {
         let elementsLength: Int = packables.reduce(0, {
             $0 + MemoryLayout<UInt8>.size + $1.pencilName.lengthOfBytes(using: String.Encoding.utf8) + $1.pencilDataLength
         })
-        return MemoryLayout<UInt8>.size*(1+packables.count) + elementsLength
+        return MemoryLayout<UInt16>.size + MemoryLayout<UInt32>.size*packables.count + elementsLength
     }
     
     public var pencilHead: [Data] {
@@ -152,7 +152,7 @@ extension Array: Writable {
         let writables: [Writable] = self.writable()
         
         let count: Data = {
-            var num: UInt8 = UInt8(writables.count)
+            var num: UInt16 = UInt16(writables.count)
             return Data(buffer: UnsafeBufferPointer(start: &num, count: 1))//Data(bytes: UnsafePointer<UInt8>(&num), count: MemoryLayout<UInt8>.size)
         }()
         
@@ -160,7 +160,7 @@ extension Array: Writable {
             let identifierLength: Int = MemoryLayout<UInt8>.size + writable.pencilName.lengthOfBytes(using: String.Encoding.utf8)
             return identifierLength + writable.pencilDataLength
         }.map { (length: Int) -> Data  in
-            var num: UInt8 = UInt8(length)
+            var num: UInt32 = UInt32(length)
             return Data(buffer: UnsafeBufferPointer(start: &num, count: 1))//Data(bytes: UnsafePointer<UInt8>(&num), count: MemoryLayout<UInt8>.size)
         }
         
