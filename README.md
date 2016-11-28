@@ -19,7 +19,7 @@ github "naru-jpn/Pencil"
 
 ### Standard values: write to file / read from file path
 
-#### Int
+- Int
 
 ```swift
 let num: Int = 2016
@@ -37,7 +37,7 @@ num.write(to: storedURL)
 let stored: Int? = Int.value(from: storedURL)
 ```
 
-#### String
+- String
 
 ```swift
 let text: String = "Pencil store value easily."
@@ -52,7 +52,7 @@ text.write(to: storedURL)
 let stored: String? = String.value(from: storedURL)
 ```
 
-#### Array (containing writable values)
+- Array (containing writable values)
 
 ```swift
 let nums: [Int] = [2016, 11, 28]
@@ -67,7 +67,7 @@ nums.write(to: storedURL)
 let stored: [Int]? = [Int].value(from: storedURL)
 ```
 
-#### Dictionary (contaning writable values and string key)
+- Dictionary (contaning writable values and string key)
 
 ```swift
 let dictionary: [String: Int] = ["year": 2016, "month": 11, "day": 28]
@@ -82,5 +82,7 @@ dictionary.write(to: url)
 let stored: [String: Int]? = [String: Int].value(from: url)
 ```
 
-Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64` .
+Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
+
+
 
