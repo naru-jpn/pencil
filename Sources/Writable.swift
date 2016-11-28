@@ -37,6 +37,7 @@ public protocol Writable {
 public extension Writable {
     
     /// write
+    @discardableResult
     public func write(to url: URL, options: Data.WritingOptions = []) -> Bool {
         do {
             try self.data.write(to: url, options: options)
