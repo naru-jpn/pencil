@@ -90,7 +90,7 @@ Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int1
 
 1. Define custom struct (named `Sample` in this case).
 1. Conform protocol `CustomReadWriteElement`.
-1. Implement `read` for function returning `Sample?` from `Components`.
+1. Implement `static var read` for function returning `Sample?` from `Components`.
   - Currying init function.
   - Apply each parameters with parameter name.
 
