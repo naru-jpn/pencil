@@ -19,7 +19,7 @@ github "naru-jpn/Pencil"
 
 ### Standard values: write to file / read from file path
 
-Int
+#### Int
 
 ```swift
 let num: Int = 2016
@@ -37,7 +37,7 @@ num.write(to: storedURL)
 let stored: Int? = Int.value(from: storedURL)
 ```
 
-String
+#### String
 
 ```swift
 let text: String = "Pencil store value easily."
@@ -52,7 +52,7 @@ text.write(to: storedURL)
 let stored: String? = String.value(from: storedURL)
 ```
 
-Array (containing writable values)
+#### Array (containing writable values)
 
 ```swift
 let nums: [Int] = [2016, 11, 28]
@@ -67,7 +67,7 @@ nums.write(to: storedURL)
 let stored: [Int]? = [Int].value(from: storedURL)
 ```
 
-Dictionary (contaning writable values and string key)
+#### Dictionary (contaning writable values and string key)
 
 ```swift
 let dictionary: [String: Int] = ["year": 2016, "month": 11, "day": 28]
@@ -86,7 +86,7 @@ Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int1
 
 ### Custom struct: write to file / read from file path
 
-Define writable and readable custom struct.
+#### Define writable and readable custom struct
 
 1. Define custom struct (named `Sample` in this case).
 1. Conform protocol `CustomReadWriteElement`.
@@ -114,6 +114,8 @@ struct Sample: CustomReadWriteElement {
 }
 ```
 
+#### write to file / read from file path
+
 Read and write values by the same way with standard values.
 
 ```swift
@@ -128,6 +130,8 @@ sample.write(to: storedURL)
 
 let stored: Sample? = Sample.value(from: url)
 ```
+
+#### Complex values containing custom struct
 
 You can now write and read complex value containing custom struct.
 
@@ -144,6 +148,8 @@ samples.write(to: storedURL)
 
 let stored: [Sample]? = [Sample].value(from: url)
 ```
+
+#### Read struct with default parameters
 
 Define writable and readable custom struct with default values. You need not to `try` if all properties have default values or optional.
 
@@ -163,9 +169,9 @@ struct Sample: CustomReadWriteElement {
 }
 ```
 
-### Support to create stored file path
+### Create stored file path
 
-You can create file path using class `Directory`.
+Pencil support to create file path using class `Directory`.
 
 ```swift
 // Create path ~/Documents/pencil.data
@@ -174,6 +180,6 @@ let url: URL? = Directory.Documents?.append(path: "pencil.data")
 
 Other directories are `Applications`, `Demos`, `Documentation`, `Documents`, `AutosavedInformation`, `Caches` and `Downloads`.
 
-## Sample project
+## Example
 
-
+[PencilExample](https://github.com/naru-jpn/pencil/tree/master/Example)
