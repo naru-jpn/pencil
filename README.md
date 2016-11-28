@@ -86,43 +86,60 @@ Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int1
 
 ### Custom struct values: write to file / read from file path
 
-Define writable and readable custom struct (with default values).
+Define writable and readable custom struct.
 
 1. Define custom struct (named `Sample` in this case).
 1. Conform protocol `CustomReadWriteElement`.
-1. Implement `read` returning function `(Components) -> Sample?` (with default values).
+1. Implement `read` for function returning `Sample?` from `Components`.
   - Currying init function.
   - Apply each parameters with parameter name.
 
 ```swift
 struct Sample: CustomReadWriteElement {
     
+  let dictionary: [String: Int]
+  let array: [Int]?
+  let identifier: String
+    
+  static var read: (Components) -> Sample? = { components in
+    do {
+      return try Sample.init
+        =<> components.component(for: "dictionary")
+        -<> components.component(for: "array")
+        -<> components.component(for: "identifier")
+    } catch {
+      return nil
+    }
+  }
+}
+```
+
+You can read and write values by the same way with standard values.
+
+```swift
+let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
+
+guard let storedURL = Directory.Documents?.append(path: "sample.data") else {
+  return
+}
+sample.write(to: storedURL)
+```
+
+Define writable and readable custom struct with default values. You need not to `try` if all properties have default values or optional.
+
+```swift
+struct Sample: CustomReadWriteElement {
+    
     let dictionary: [String: Int]
-    let array: [Int]
+    let array: [Int]?
     let identifier: String
     
     static var read: (Components) -> Sample? = { components in      
         return Sample.init
             =<> components.component(for: "dictionary", defaultValue: ["default":100])
-            -<> components.component(for: "array", defaultValue: [])
+            -<> components.component(for: "array")
             -<> components.component(for: "identifier", defaultValue: "default")
     }
 }
 ```
-
-You can read and write values by the same way of standard values.
-
-```swift
-let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
-
-guard let storedURL = Directory.Documents?.append(path: "dictionary.data") else {
-  return
-}
-dictionary.write(to: storedURL)
-```
-
-
-Define writable and readable custom struct without default values.
-
-
 
