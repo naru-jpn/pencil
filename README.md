@@ -31,7 +31,7 @@ guard let storedURL = Directory.Documents?.append(path: "int.data") else {
 // write
 num.write(to: storedURL)
 
-...
+// ...
 
 // read
 let stored: Int? = Int.value(from: storedURL)
@@ -47,7 +47,7 @@ guard let storedURL = Directory.Documents?.append(path: "text.data") else {
 }
 text.write(to: storedURL)
 
-...
+// ...
 
 let stored: String? = String.value(from: storedURL)
 ```
@@ -62,7 +62,7 @@ guard let storedURL = Directory.Documents?.append(path: "nums.data") else {
 }
 nums.write(to: storedURL)
 
-...
+// ...
 
 let stored: [Int]? = [Int].value(from: storedURL)
 ```
@@ -77,14 +77,14 @@ guard let storedURL = Directory.Documents?.append(path: "dictionary.data") else 
 }
 dictionary.write(to: storedURL)
 
-...
+// ...
 
 let stored: [String: Int]? = [String: Int].value(from: url)
 ```
 
 Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
 
-### Custom struct values: write to file / read from file path
+### Custom struct: write to file / read from file path
 
 Define writable and readable custom struct.
 
@@ -114,7 +114,7 @@ struct Sample: CustomReadWriteElement {
 }
 ```
 
-You can read and write values by the same way with standard values.
+Read and write values by the same way with standard values.
 
 ```swift
 let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
@@ -123,6 +123,26 @@ guard let storedURL = Directory.Documents?.append(path: "sample.data") else {
   return
 }
 sample.write(to: storedURL)
+
+// ...
+
+let stored: Sample? = Sample.value(from: url)
+```
+
+You can now write and read complex value containing custom struct.
+
+```swift
+let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
+let samples: [Samples] = [sample, sample, sample]
+
+guard let storedURL = Directory.Documents?.append(path: "samples.data") else {
+  return
+}
+samples.write(to: storedURL)
+
+// ...
+
+let stored: [Sample]? = [Sample].value(from: url)
 ```
 
 Define writable and readable custom struct with default values. You need not to `try` if all properties have default values or optional.
@@ -142,4 +162,18 @@ struct Sample: CustomReadWriteElement {
     }
 }
 ```
+
+### Support to create stored file path
+
+You can create file path using class `Directory`.
+
+```swift
+// Create path ~/Documents/pencil.data
+let url: URL? = Directory.Documents?.append(path: "pencil.data")
+```
+
+Other directories are `Applications`, `Demos`, `Documentation`, `Documents`, `AutosavedInformation`, `Caches` and `Downloads`.
+
+## Sample project
+
 
