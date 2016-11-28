@@ -67,7 +67,7 @@ nums.write(to: storedURL)
 let stored: [Int]? = [Int].value(from: storedURL)
 ```
 
-#### Dictionary (contaning writable values and string key)
+#### Dictionary (contaning writable values with string key)
 
 ```swift
 let dictionary: [String: Int] = ["year": 2016, "month": 11, "day": 28]
