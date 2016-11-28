@@ -15,5 +15,72 @@ __Carthage__
 github "naru-jpn/Pencil"
 ```
 
+## Usage
 
+### Standard values: write to file / read from file path
+
+#### Int
+
+```swift
+let num: Int = 2016
+
+// create stored url
+guard let storedURL = Directory.Documents?.append(path: "int.data") else {
+  return
+}
+// write
+num.write(to: storedURL)
+
+...
+
+// read
+let stored: Int? = Int.value(from: storedURL)
+```
+
+#### String
+
+```swift
+let text: String = "Pencil store value easily."
+
+guard let storedURL = Directory.Documents?.append(path: "text.data") else {
+  return
+}
+text.write(to: storedURL)
+
+...
+
+let stored: String? = String.value(from: storedURL)
+```
+
+#### Array (containing writable values)
+
+```swift
+let nums: [Int] = [2016, 11, 28]
+
+guard let storedURL = Directory.Documents?.append(path: "nums.data") else {
+  return
+}
+nums.write(to: storedURL)
+
+...
+
+let stored: [Int]? = [Int].value(from: storedURL)
+```
+
+#### Dictionary (contaning writable values and string key)
+
+```swift
+let dictionary: [String: Int] = ["year": 2016, "month": 11, "day": 28]
+
+guard let storedURL = Directory.Documents?.append(path: "dictionary.data") else {
+  return
+}
+dictionary.write(to: url)
+
+...
+
+let stored: [String: Int]? = [String: Int].value(from: url)
+```
+
+Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64` .
 
