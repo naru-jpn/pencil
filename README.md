@@ -103,10 +103,11 @@ struct Sample: CustomReadWriteElement {
     
   static var read: (Components) -> Sample? = { components in
     do {
-      return try Sample.init
-        =<> components.component(for: "dictionary")
-        -<> components.component(for: "array")
-        -<> components.component(for: "identifier")
+      return try Sample(
+        dictionary: components.component(for: "dictionary"),
+        array:      components.component(for: "array"),
+        identifier: components.component(for: "identifier")
+      )
     } catch {
       return nil
     }
@@ -161,10 +162,11 @@ struct Sample: CustomReadWriteElement {
     let identifier: String
     
     static var read: (Components) -> Sample? = { components in      
-        return Sample.init
-            =<> components.component(for: "dictionary", defaultValue: ["default":100])
-            -<> components.component(for: "array")
-            -<> components.component(for: "identifier", defaultValue: "default")
+        return Sample(
+            dictionary: components.component(for: "dictionary", defaultValue: ["default": 100]),
+            array:      components.component(for: "array"),
+            identifier: components.component(for: "identifier", defaultValue: "default")
+        )
     }
 }
 ```
