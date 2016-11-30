@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.license               = { :type => 'MIT', :file => 'LICENSE' }
   s.author                = { "naru" => "tus.naru@gmail.com" }
   s.source                = { :git => "https://github.com/naru-jpn/pencil.git", :tag => @version }
-  s.source_files          = 'Sources/*.swift', 'Sources/StandardValues/*.swift', 'Sources/Extensions/*.swift', 'Sources/Supports/*.swift'
+  s.source_files          = 'Sources/*.swift'
   s.ios.deployment_target = '10.0'
 end
