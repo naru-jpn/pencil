@@ -31,12 +31,12 @@
 		43D35DBA1DEF04FA00EC4D1F /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB91DEF04FA00EC4D1F /* UInt.swift */; };
 		43D35DBC1DEF050100EC4D1F /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DBB1DEF050100EC4D1F /* Int.swift */; };
 		43D35DBE1DEF050800EC4D1F /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DBD1DEF050800EC4D1F /* Float.swift */; };
-		43D35DE11DEF0BBA00EC4D1F /* NSData+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDC1DEF0BBA00EC4D1F /* NSData+Split.swift */; };
-		43D35DE21DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDD1DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift */; };
-		43D35DE31DEF0BBA00EC4D1F /* UInt8+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDE1DEF0BBA00EC4D1F /* UInt8+Data.swift */; };
-		43D35DE41DEF0BBA00EC4D1F /* UInt16+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDF1DEF0BBA00EC4D1F /* UInt16+Data.swift */; };
-		43D35DE51DEF0BBA00EC4D1F /* UInt32+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DE01DEF0BBA00EC4D1F /* UInt32+Data.swift */; };
-		43D35DE71DEF0BCB00EC4D1F /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DE61DEF0BCB00EC4D1F /* Directory.swift */; };
+		43FF58B51DEFBAF800E4E20B /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DE61DEF0BCB00EC4D1F /* Directory.swift */; };
+		43FF58E01DEFC40400E4E20B /* NSData+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDC1DEF0BBA00EC4D1F /* NSData+Split.swift */; };
+		43FF58E11DEFC40400E4E20B /* UInt8+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDE1DEF0BBA00EC4D1F /* UInt8+Data.swift */; };
+		43FF58E21DEFC40400E4E20B /* UInt16+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDF1DEF0BBA00EC4D1F /* UInt16+Data.swift */; };
+		43FF58E31DEFC40400E4E20B /* UInt32+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DE01DEF0BBA00EC4D1F /* UInt32+Data.swift */; };
+		43FF58E41DEFC40400E4E20B /* NSNumber+SwiftyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DDD1DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,12 +89,12 @@
 		43D35DB91DEF04FA00EC4D1F /* UInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt.swift; path = Sources/UInt.swift; sourceTree = SOURCE_ROOT; };
 		43D35DBB1DEF050100EC4D1F /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int.swift; path = Sources/Int.swift; sourceTree = SOURCE_ROOT; };
 		43D35DBD1DEF050800EC4D1F /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Float.swift; path = Sources/Float.swift; sourceTree = SOURCE_ROOT; };
-		43D35DDC1DEF0BBA00EC4D1F /* NSData+Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+Split.swift"; path = "../NSData+Split.swift"; sourceTree = "<group>"; };
-		43D35DDD1DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSNumber+SwiftyValue.swift"; path = "../NSNumber+SwiftyValue.swift"; sourceTree = "<group>"; };
-		43D35DDE1DEF0BBA00EC4D1F /* UInt8+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt8+Data.swift"; path = "../UInt8+Data.swift"; sourceTree = "<group>"; };
-		43D35DDF1DEF0BBA00EC4D1F /* UInt16+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt16+Data.swift"; path = "../UInt16+Data.swift"; sourceTree = "<group>"; };
-		43D35DE01DEF0BBA00EC4D1F /* UInt32+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt32+Data.swift"; path = "../UInt32+Data.swift"; sourceTree = "<group>"; };
-		43D35DE61DEF0BCB00EC4D1F /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Directory.swift; path = ../Directory.swift; sourceTree = "<group>"; };
+		43D35DDC1DEF0BBA00EC4D1F /* NSData+Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Split.swift"; sourceTree = "<group>"; };
+		43D35DDD1DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+SwiftyValue.swift"; sourceTree = "<group>"; };
+		43D35DDE1DEF0BBA00EC4D1F /* UInt8+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt8+Data.swift"; sourceTree = "<group>"; };
+		43D35DDF1DEF0BBA00EC4D1F /* UInt16+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt16+Data.swift"; sourceTree = "<group>"; };
+		43D35DE01DEF0BBA00EC4D1F /* UInt32+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt32+Data.swift"; sourceTree = "<group>"; };
+		43D35DE61DEF0BCB00EC4D1F /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,25 +334,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FF58E01DEFC40400E4E20B /* NSData+Split.swift in Sources */,
+				43FF58E11DEFC40400E4E20B /* UInt8+Data.swift in Sources */,
+				43FF58E21DEFC40400E4E20B /* UInt16+Data.swift in Sources */,
+				43FF58E31DEFC40400E4E20B /* UInt32+Data.swift in Sources */,
+				43FF58E41DEFC40400E4E20B /* NSNumber+SwiftyValue.swift in Sources */,
+				43FF58B51DEFBAF800E4E20B /* Directory.swift in Sources */,
 				43D35DB41DEF04D800EC4D1F /* Operators.swift in Sources */,
 				430D40021D9313D600D4D392 /* ReadWriteElement.swift in Sources */,
 				430D3FFC1D9313B700D4D392 /* Pencil.swift in Sources */,
 				430D40181D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */,
-				43D35DE11DEF0BBA00EC4D1F /* NSData+Split.swift in Sources */,
-				43D35DE31DEF0BBA00EC4D1F /* UInt8+Data.swift in Sources */,
 				430D3FFF1D9313C700D4D392 /* Writable.swift in Sources */,
-				43D35DE21DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift in Sources */,
 				430D400B1D9313FF00D4D392 /* Readable.swift in Sources */,
 				430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */,
-				43D35DE51DEF0BBA00EC4D1F /* UInt32+Data.swift in Sources */,
 				43D35DBA1DEF04FA00EC4D1F /* UInt.swift in Sources */,
 				43D35DBC1DEF050100EC4D1F /* Int.swift in Sources */,
 				430D40051D9313E000D4D392 /* ReadWriteArray.swift in Sources */,
 				43D35DBE1DEF050800EC4D1F /* Float.swift in Sources */,
 				43D35DB81DEF04F300EC4D1F /* String.swift in Sources */,
 				43D35DB61DEF04E800EC4D1F /* Double.swift in Sources */,
-				43D35DE41DEF0BBA00EC4D1F /* UInt16+Data.swift in Sources */,
-				43D35DE71DEF0BCB00EC4D1F /* Directory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
