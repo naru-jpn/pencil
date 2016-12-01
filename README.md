@@ -199,3 +199,7 @@ Other directories are `Applications`, `Demos`, `Documentation`, `Documents`, `Au
 ## Example
 
 [PencilExample](https://github.com/naru-jpn/pencil/tree/master/Example)
+
+## License
+
+Pencil is released under the MIT license. See LICENSE for details.
