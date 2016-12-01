@@ -2,7 +2,7 @@
 
 <p align="center"><img src="./pencil.png" width="150" alt="pencil_logo" /></p>
 
-<p align="center"><img src="https://img.shields.io/badge/Platform-iOS-blue.svg" alt="platform-ios" /> <img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="carthage-compatible" /> <img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="swift-3.0" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Platform-iOS-blue.svg" alt="platform-ios" /> <img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="carthage-compatible" /> <img src="https://img.shields.io/badge/Pod-0.0.7-blue.svg" alt="cocoapods-compatible" /> <img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="swift-3.0" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT" /></p>
 
 Use of value types is recommended and we define standard values, simple structured data, application state and etc. as struct. 
 Pencil makes us store these values more easily.
@@ -14,6 +14,20 @@ __Carthage__
 ```
 github "naru-jpn/Pencil"
 ```
+
+__CocoaPods__
+
+```
+pod 'pencil'
+```
+
+__Swift Package Manager__
+
+Compatible.
+
+__Manually__
+
+Copy all `*.swift` files contained in `Sources` into your project. 
 
 ## Usage
 
@@ -134,7 +148,7 @@ let stored: Sample? = Sample.value(from: url)
 
 #### Complex values containing custom struct
 
-You can now write and read complex value containing custom struct.
+You can now write and read complex values containing custom struct.
 
 ```swift
 let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
@@ -152,7 +166,7 @@ let stored: [Sample]? = [Sample].value(from: url)
 
 #### Read struct with default parameters
 
-Define writable and readable custom struct with default values. You need not to `try` if all properties have default values or optional.
+Define custom struct with default parameters. You need not to `try` if all properties have default values or optional.
 
 ```swift
 struct Sample: CustomReadWriteElement {
