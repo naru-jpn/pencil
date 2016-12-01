@@ -89,12 +89,12 @@
 		43D35DB91DEF04FA00EC4D1F /* UInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt.swift; path = Sources/UInt.swift; sourceTree = SOURCE_ROOT; };
 		43D35DBB1DEF050100EC4D1F /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Int.swift; path = Sources/Int.swift; sourceTree = SOURCE_ROOT; };
 		43D35DBD1DEF050800EC4D1F /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Float.swift; path = Sources/Float.swift; sourceTree = SOURCE_ROOT; };
-		43D35DDC1DEF0BBA00EC4D1F /* NSData+Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Split.swift"; sourceTree = "<group>"; };
-		43D35DDD1DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+SwiftyValue.swift"; sourceTree = "<group>"; };
-		43D35DDE1DEF0BBA00EC4D1F /* UInt8+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt8+Data.swift"; sourceTree = "<group>"; };
-		43D35DDF1DEF0BBA00EC4D1F /* UInt16+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt16+Data.swift"; sourceTree = "<group>"; };
-		43D35DE01DEF0BBA00EC4D1F /* UInt32+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt32+Data.swift"; sourceTree = "<group>"; };
-		43D35DE61DEF0BCB00EC4D1F /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		43D35DDC1DEF0BBA00EC4D1F /* NSData+Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+Split.swift"; path = "../NSData+Split.swift"; sourceTree = "<group>"; };
+		43D35DDD1DEF0BBA00EC4D1F /* NSNumber+SwiftyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSNumber+SwiftyValue.swift"; path = "../NSNumber+SwiftyValue.swift"; sourceTree = "<group>"; };
+		43D35DDE1DEF0BBA00EC4D1F /* UInt8+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt8+Data.swift"; path = "../UInt8+Data.swift"; sourceTree = "<group>"; };
+		43D35DDF1DEF0BBA00EC4D1F /* UInt16+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt16+Data.swift"; path = "../UInt16+Data.swift"; sourceTree = "<group>"; };
+		43D35DE01DEF0BBA00EC4D1F /* UInt32+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt32+Data.swift"; path = "../UInt32+Data.swift"; sourceTree = "<group>"; };
+		43D35DE61DEF0BCB00EC4D1F /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Directory.swift; path = ../Directory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

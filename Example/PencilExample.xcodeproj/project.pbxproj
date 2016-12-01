@@ -128,31 +128,15 @@
 				430F969C1DC247E90069F74B /* Double.swift */,
 				4360C4A91DAFBABF00D371E1 /* String.swift */,
 				43D35DCF1DEF0B3800EC4D1F /* Operators.swift */,
-				43D35DD11DEF0B6E00EC4D1F /* Extensions */,
-				43D35DCA1DEF0B1000EC4D1F /* Supports */,
-			);
-			name = Sources;
-			path = ../../../Sources;
-			sourceTree = "<group>";
-		};
-		43D35DCA1DEF0B1000EC4D1F /* Supports */ = {
-			isa = PBXGroup;
-			children = (
 				43D35DCB1DEF0B1000EC4D1F /* Directory.swift */,
-			);
-			path = Supports;
-			sourceTree = "<group>";
-		};
-		43D35DD11DEF0B6E00EC4D1F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
+				43D35DD21DEF0B8900EC4D1F /* NSData+Split.swift */,
 				43D35DD41DEF0B8900EC4D1F /* UInt8+Data.swift */,
 				43D35DD51DEF0B8900EC4D1F /* UInt16+Data.swift */,
 				43D35DD61DEF0B8900EC4D1F /* UInt32+Data.swift */,
-				43D35DD21DEF0B8900EC4D1F /* NSData+Split.swift */,
 				43D35DD31DEF0B8900EC4D1F /* NSNumber+SwiftyValue.swift */,
 			);
-			path = Extensions;
+			name = Sources;
+			path = ../../../Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
