@@ -27,7 +27,7 @@ Compatible.
 
 __Manually__
 
-Copy all `*.swift` files contained in `Sources` into your project. 
+Copy all `*.swift` files contained in `Sources` directory into your project. 
 
 ## Usage
 
