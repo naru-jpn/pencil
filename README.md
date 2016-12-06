@@ -35,6 +35,15 @@ __Manually__
 
 Copy all `*.swift` files contained in `Sources` directory into your project. 
 
+## Example of use
+
+- __Store application state such as tab index application selected at last time.__
+  - You can write `Int` value into file on device and read it.
+- __Store recently user inserted textfield value.__
+  - You can write `String` value into file named for each textfield and read it.
+- __Store structured data without any DB system.__
+  - You can write struct values into file on device and read it.
+
 ## Usage
 
 ### Standard values: write to file / read from file path
