@@ -51,12 +51,13 @@ Copy all `*.swift` files contained in `Sources` directory into your project.
 #### Int
 
 ```swift
-let num: Int = 2016
-
 // create stored url
 guard let storedURL = Directory.Documents?.append(path: "int.data") else {
   return
 }
+
+let num: Int = 2016
+
 // write
 num.write(to: storedURL)
 
@@ -70,10 +71,6 @@ let stored: Int? = Int.value(from: storedURL)
 
 ```swift
 let text: String = "Pencil store value easily."
-
-guard let storedURL = Directory.Documents?.append(path: "text.data") else {
-  return
-}
 text.write(to: storedURL)
 
 // ...
@@ -85,10 +82,6 @@ let stored: String? = String.value(from: storedURL)
 
 ```swift
 let nums: [Int] = [2016, 11, 28]
-
-guard let storedURL = Directory.Documents?.append(path: "nums.data") else {
-  return
-}
 nums.write(to: storedURL)
 
 // ...
@@ -100,10 +93,6 @@ let stored: [Int]? = [Int].value(from: storedURL)
 
 ```swift
 let dictionary: [String: Int] = ["year": 2016, "month": 11, "day": 28]
-
-guard let storedURL = Directory.Documents?.append(path: "dictionary.data") else {
-  return
-}
 dictionary.write(to: storedURL)
 
 // ...
@@ -150,10 +139,6 @@ Read and write values by the same way with standard values.
 
 ```swift
 let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
-
-guard let storedURL = Directory.Documents?.append(path: "sample.data") else {
-  return
-}
 sample.write(to: storedURL)
 
 // ...
@@ -168,10 +153,6 @@ You can now write and read complex values containing custom struct.
 ```swift
 let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
 let samples: [Samples] = [sample, sample, sample]
-
-guard let storedURL = Directory.Documents?.append(path: "samples.data") else {
-  return
-}
 samples.write(to: storedURL)
 
 // ...
