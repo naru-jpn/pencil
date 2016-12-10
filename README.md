@@ -51,7 +51,7 @@ Copy all `*.swift` files contained in `Sources` directory into your project.
 #### Int
 
 ```swift
-// create stored url
+// (create stored url)
 guard let storedURL = Directory.Documents?.append(path: "int.data") else {
   return
 }
