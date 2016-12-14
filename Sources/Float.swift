@@ -23,14 +23,10 @@ extension Float: ReadWriteElement {
         return [Data(buffer: UnsafeBufferPointer(start: &num, count: 1))]
     }
     
-    public static var read: ((Components) -> Float?) = { components in
-        
+    public static func read(from components: Components) -> Float? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
-        var value: Float = 0
-        (data as NSData).getBytes(&value, length: MemoryLayout<Float>.size)
-        return value
+        return data.withUnsafeBytes{ $0.pointee }
     }
 }

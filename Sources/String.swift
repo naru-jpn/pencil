@@ -26,12 +26,10 @@ extension String: ReadWriteElement {
         return [data]
     }
     
-    public static var read: ((Components) -> String?) = { components in
-        
+    public static func read(from components: Components) -> String? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
         let length: UInt16 = UInt16(data: data.subdata(in: 0..<MemoryLayout<UInt16>.size))
         let subdata = data.subdata(from: MemoryLayout<UInt16>.size, with: Int(length))
         return NSString(data: subdata, encoding: String.Encoding.utf8.rawValue) as? String

@@ -16,7 +16,7 @@ open class Pencil {
         guard let components: Components = T.devide(data: data) else {
             return nil
         }
-        return T.read(components)
+        return T.read(from: components)
     }
     
     open class func read<T: ReadWriteElement>(_ data: Data) -> [T]? {
@@ -37,7 +37,7 @@ open class Pencil {
         guard let components: Components = T.devide(data: data) else {
             return nil
         }
-        return T.read(components)
+        return T.read(from: components)
     }
     
     open class func read<T: CustomReadWriteElement>(_ data: Data) -> [T]? {

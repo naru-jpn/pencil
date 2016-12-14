@@ -23,15 +23,11 @@ extension Int: ReadWriteElement {
         return [Data(buffer: UnsafeBufferPointer(start: &num, count: 1))]
     }
     
-    public static var read: ((Components) -> Int?) = { components in
-        
+    public static func read(from components: Components) -> Int? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
-        var value: Int = 0
-        (data as NSData).getBytes(&value, length: MemoryLayout<Int>.size)
-        return value
+        return data.withUnsafeBytes{ $0.pointee }
     }
 }
 
@@ -50,15 +46,11 @@ extension Int8: ReadWriteElement {
         return [Data(buffer: UnsafeBufferPointer(start: &num, count: 1))]
     }
     
-    public static var read: ((Components) -> Int8?) = { components in
-        
+    public static func read(from components: Components) -> Int8? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
-        var value: Int8 = 0
-        (data as NSData).getBytes(&value, length: MemoryLayout<Int8>.size)
-        return value
+        return data.withUnsafeBytes{ $0.pointee }
     }
 }
 
@@ -77,15 +69,11 @@ extension Int16: ReadWriteElement {
         return [Data(buffer: UnsafeBufferPointer(start: &num, count: 1))]
     }
     
-    public static var read: ((Components) -> Int16?) = { components in
-        
+    public static func read(from components: Components) -> Int16? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
-        var value: Int16 = 0
-        (data as NSData).getBytes(&value, length: MemoryLayout<Int16>.size)
-        return value
+        return data.withUnsafeBytes{ $0.pointee }
     }
 }
 
@@ -104,15 +92,11 @@ extension Int32: ReadWriteElement {
         return [Data(buffer: UnsafeBufferPointer(start: &num, count: 1))]
     }
     
-    public static var read: ((Components) -> Int32?) = { components in
-        
+    public static func read(from components: Components) -> Int32? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
-        var value: Int32 = 0
-        (data as NSData).getBytes(&value, length: MemoryLayout<Int32>.size)
-        return value
+        return data.withUnsafeBytes{ $0.pointee }
     }
 }
 
@@ -131,14 +115,10 @@ extension Int64: ReadWriteElement {
         return [Data(buffer: UnsafeBufferPointer(start: &num, count: 1))]
     }
     
-    public static var read: ((Components) -> Int64?) = { components in
-        
+    public static func read(from components: Components) -> Int64? {
         guard let data: Data = components.dictionary["value"] as Data? else {
             return nil
         }
-        
-        var value: Int64 = 0
-        (data as NSData).getBytes(&value, length: MemoryLayout<Int64>.size)
-        return value
+        return data.withUnsafeBytes{ $0.pointee }
     }
 }

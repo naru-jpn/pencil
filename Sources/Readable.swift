@@ -12,7 +12,7 @@ import Foundation
 public protocol Readable {
     
     /// Procedure to restore value from mapped dictionary.
-    static var read: (Components) -> Self? { get }
+    static func read(from components: Components) -> Self?
 }
 
 enum ReadError: Error {
@@ -37,7 +37,7 @@ extension Components {
             throw ReadError.notFound
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components) else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components) else {
             throw ReadError.cannotRead
         }
         
@@ -54,7 +54,7 @@ extension Components {
             return defaultValue
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components)  else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components)  else {
             return defaultValue
         }
         
@@ -70,7 +70,7 @@ extension Components {
             return nil
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components)  else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components)  else {
             return nil
         }
         
@@ -87,7 +87,7 @@ extension Components {
             return defaultValue
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components)  else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components)  else {
             return defaultValue
         }
         
@@ -247,7 +247,7 @@ extension Components {
             throw ReadError.notFound
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components) else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components) else {
             throw ReadError.cannotRead
         }
         
@@ -264,7 +264,7 @@ extension Components {
             return defaultValue
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components)  else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components)  else {
             return defaultValue
         }
         
@@ -280,7 +280,7 @@ extension Components {
             return nil
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components)  else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components)  else {
             return nil
         }
         
@@ -297,7 +297,7 @@ extension Components {
             return defaultValue
         }
         
-        guard let components: Components = T.devide(data: data), let value: T = T.read(components)  else {
+        guard let components: Components = T.devide(data: data), let value: T = T.read(from: components)  else {
             return defaultValue
         }
         

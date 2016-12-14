@@ -14,11 +14,11 @@ struct Sample: CustomReadWriteElement {
     let array: [Int]
     let identifier: String
     
-    static var read: (Components) -> Sample? = { components in
-       
-        return Sample.init
-            =<> components.component(for: "dictionary", defaultValue: ["default":100])
-            -<> components.component(for: "array", defaultValue: [])
-            -<> components.component(for: "identifier", defaultValue: "default")
+    static func read(from components: Components) -> Sample? {
+        return Sample(
+            dictionary: components.component(for: "dictionary", defaultValue: ["default":100]),
+            array: components.component(for: "array", defaultValue: []),
+            identifier: components.component(for: "identifier", defaultValue: "default")
+        )
     }
 }
