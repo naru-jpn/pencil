@@ -1,8 +1,16 @@
+<!--# Pencil-->
+
+<p align="center"><img src="./pencil.png" width="170" alt="pencil_logo" /></p>
+
+<p align="center"><img src="https://img.shields.io/badge/Platform-iOS-blue.svg" alt="platform-ios" /> <img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="carthage-compatible" /> <img src="https://img.shields.io/badge/Pod-0.0.7-blue.svg" alt="cocoapods-compatible" /> <img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="swift-3.0" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT" /></p>
+
+<!--
 <p align="center">Write any value to file.</p>
 
 <p align="center"><img src="./pencil.png" width="150" alt="pencil_logo" /></p>
 
-<p align="center"><img src="https://img.shields.io/badge/Platform-iOS-blue.svg" alt="platform-ios" /> <img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="carthage-compatible" /> <img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="swift-3.0" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Platform-iOS-blue.svg" alt="platform-ios" /> <img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="carthage-compatible" /> <img src="https://img.shields.io/badge/Pod-0.0.7-blue.svg" alt="cocoapods-compatible" /> <img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="swift-3.0" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT" /></p>
+-->
 
 Use of value types is recommended and we define standard values, simple structured data, application state and etc. as struct. 
 Pencil makes us store these values more easily.
@@ -15,6 +23,29 @@ __Carthage__
 github "naru-jpn/Pencil"
 ```
 
+__CocoaPods__
+
+```
+pod 'pencil'
+```
+
+__Swift Package Manager__
+
+Compatible.
+
+__Manually__
+
+Copy all `*.swift` files contained in `Sources` directory into your project. 
+
+## Example of read/write data
+
+- __Application state such as tab index application selected at last time.__
+  - You can write `Int` value into file on device and read it.
+- __Recently user inserted textfield value.__
+  - You can write `String` value into file named for each textfield and read it.
+- __Structured data without any DB system.__
+  - You can write struct values into file on device and read it.
+
 ## Usage
 
 ### Standard values: write to file / read from file path
@@ -22,12 +53,13 @@ github "naru-jpn/Pencil"
 #### Int
 
 ```swift
-let num: Int = 2016
-
-// create stored url
+// (create stored url)
 guard let storedURL = Directory.Documents?.append(path: "int.data") else {
   return
 }
+
+let num: Int = 2016
+
 // write
 num.write(to: storedURL)
 
@@ -41,10 +73,6 @@ let stored: Int? = Int.value(from: storedURL)
 
 ```swift
 let text: String = "Pencil store value easily."
-
-guard let storedURL = Directory.Documents?.append(path: "text.data") else {
-  return
-}
 text.write(to: storedURL)
 
 // ...
@@ -56,10 +84,6 @@ let stored: String? = String.value(from: storedURL)
 
 ```swift
 let nums: [Int] = [2016, 11, 28]
-
-guard let storedURL = Directory.Documents?.append(path: "nums.data") else {
-  return
-}
 nums.write(to: storedURL)
 
 // ...
@@ -71,10 +95,6 @@ let stored: [Int]? = [Int].value(from: storedURL)
 
 ```swift
 let dictionary: [String: Int] = ["year": 2016, "month": 11, "day": 28]
-
-guard let storedURL = Directory.Documents?.append(path: "dictionary.data") else {
-  return
-}
 dictionary.write(to: storedURL)
 
 // ...
@@ -121,10 +141,6 @@ Read and write values by the same way with standard values.
 
 ```swift
 let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
-
-guard let storedURL = Directory.Documents?.append(path: "sample.data") else {
-  return
-}
 sample.write(to: storedURL)
 
 // ...
@@ -134,15 +150,11 @@ let stored: Sample? = Sample.value(from: url)
 
 #### Complex values containing custom struct
 
-You can now write and read complex value containing custom struct.
+You can now write and read complex values containing custom struct.
 
 ```swift
 let sample: Sample = Sample(dictionary: ["one": 2, "two": 5], array: [2, 3], identifier: "abc123")
 let samples: [Samples] = [sample, sample, sample]
-
-guard let storedURL = Directory.Documents?.append(path: "samples.data") else {
-  return
-}
 samples.write(to: storedURL)
 
 // ...
@@ -152,7 +164,7 @@ let stored: [Sample]? = [Sample].value(from: url)
 
 #### Read struct with default parameters
 
-Define writable and readable custom struct with default values. You need not to `try` if all properties have default values or optional.
+Define custom struct with default parameters. You need not to `try` if all properties have default values or optional.
 
 ```swift
 struct Sample: CustomReadWriteElement {
@@ -185,3 +197,7 @@ Other directories are `Applications`, `Demos`, `Documentation`, `Documents`, `Au
 ## Example
 
 [PencilExample](https://github.com/naru-jpn/pencil/tree/master/Example)
+
+## License
+
+Pencil is released under the MIT license. See LICENSE for details.
