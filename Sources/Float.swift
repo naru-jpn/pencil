@@ -10,6 +10,14 @@ import Foundation
 
 extension Float: ReadWriteElement {
     
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
+
     public var pencilDataLength: Int {
         return MemoryLayout<Float>.size
     }

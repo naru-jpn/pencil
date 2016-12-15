@@ -11,10 +11,10 @@ import Foundation
 /// Protocol to convert value to data
 public protocol Writable {
     
-    /// Name. (Implemented default behavior.)
+    /// Name.
     static var sPencilName: String { get }
     
-    /// Name. (Implemented default behavior.)
+    /// Name.
     var pencilName: String { get }
     
     /// Number of bytes of the whole written data.
@@ -46,16 +46,6 @@ public extension Writable {
             debugPrint("Failed to write data to file: \(error.localizedDescription)")
             return false
         }
-    }
-    
-    /// name
-    public static var sPencilName: String {
-        return "\(self)"
-    }
-    
-    /// name
-    public var pencilName: String {
-        return "\(Mirror(reflecting: self).subjectType)"
     }
     
     /// Identifier of data

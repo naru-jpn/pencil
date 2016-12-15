@@ -11,6 +11,14 @@ import Foundation
 public protocol CustomReadWriteElement: ReadWrite { }
 
 extension CustomReadWriteElement {
+    
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
 
     public static func value(from url: URL, options: Data.ReadingOptions = []) -> Self? {
         do {

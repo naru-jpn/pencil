@@ -16,6 +16,8 @@
 		430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */; };
 		430D400B1D9313FF00D4D392 /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400A1D9313FF00D4D392 /* Readable.swift */; };
 		430D40181D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */; };
+		432180521E018029001BE884 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432180511E018029001BE884 /* Enum.swift */; };
+		432180541E018096001BE884 /* EnumSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432180531E018096001BE884 /* EnumSpec.swift */; };
 		4360C4AD1DAFBEF900D371E1 /* IntSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */; };
 		4360C4B01DAFBF2100D371E1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4360C4AF1DAFBF2100D371E1 /* Nimble.framework */; };
 		4360C4B21DAFBF2300D371E1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4360C4B11DAFBF2300D371E1 /* Quick.framework */; };
@@ -76,6 +78,8 @@
 		430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteDictionary.swift; sourceTree = "<group>"; };
 		430D400A1D9313FF00D4D392 /* Readable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Readable.swift; sourceTree = "<group>"; };
 		430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReadWriteElement.swift; sourceTree = "<group>"; };
+		432180511E018029001BE884 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Sources/Enum.swift; sourceTree = SOURCE_ROOT; };
+		432180531E018096001BE884 /* EnumSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSpec.swift; sourceTree = "<group>"; };
 		4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntSpec.swift; sourceTree = "<group>"; };
 		4360C4AF1DAFBF2100D371E1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4360C4B11DAFBF2300D371E1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				438DEDA71DB3E576002742F1 /* FloatSpec.swift */,
 				438DEDA91DB3E627002742F1 /* DoubleSpec.swift */,
 				4360C4B91DAFC41500D371E1 /* StringSpec.swift */,
+				432180531E018096001BE884 /* EnumSpec.swift */,
 			);
 			path = PencilTests;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				43D35DBD1DEF050800EC4D1F /* Float.swift */,
 				43D35DB51DEF04E800EC4D1F /* Double.swift */,
 				43D35DB71DEF04F300EC4D1F /* String.swift */,
+				432180511E018029001BE884 /* Enum.swift */,
 			);
 			path = StandardValues;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				430D40051D9313E000D4D392 /* ReadWriteArray.swift in Sources */,
 				43D35DBE1DEF050800EC4D1F /* Float.swift in Sources */,
 				43D35DB81DEF04F300EC4D1F /* String.swift in Sources */,
+				432180521E018029001BE884 /* Enum.swift in Sources */,
 				43D35DB61DEF04E800EC4D1F /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +372,7 @@
 				4360C4BA1DAFC41500D371E1 /* StringSpec.swift in Sources */,
 				438DEDAA1DB3E627002742F1 /* DoubleSpec.swift in Sources */,
 				438DEDA81DB3E576002742F1 /* FloatSpec.swift in Sources */,
+				432180541E018096001BE884 /* EnumSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

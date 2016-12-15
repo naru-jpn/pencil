@@ -11,41 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    struct Constants {
+        static let ApplicationStateURL: URL = Directory.Documents!.append(path: "application_state.data")
+    }
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
-        self.example()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = self.tabBarController
+        self.window?.makeKeyAndVisible()
+        
+        if let applicationState = ApplicationState.value(from: Constants.ApplicationStateURL) {
+            self.tabBarController.selectedIndex = applicationState.tabIndex
+        }
         
         return true
     }
-    
-    func example() {
-    
-        guard let url = Directory.Documents?.append(path: "int.data") else {
-            return
-        }
-        
-        let num: Int = 2016
-        
-        /// write to file path
-        _ = num.write(to: url)
-        
-        /// read from file path
-        debugPrint("result: \(Int.value(from: url))")
-        
-        guard let sampleurl = Directory.Documents?.append(path: "sample.data") else {
-            return
-        }
-        
-        // sample test
-        let sample: Sample = Sample(dictionary: ["a": 10, "b": 10, "c": 10, "d": 10, "e": 10, "f": 10, "g": 10, "h": 10, "i": 10, "j": 10], array: [2, 3], identifier: "id")
-        let samples: [Sample] = [sample, sample, sample]
-        _ = samples.write(to: sampleurl)
-        let readSamples: [Sample]? = [Sample].value(from: sampleurl)
-        debugPrint("samples: \(readSamples)")
-    }
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -55,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        ApplicationState(tabIndex: self.tabBarController.selectedIndex).write(to: Constants.ApplicationStateURL)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -67,8 +51,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        ApplicationState(tabIndex: self.tabBarController.selectedIndex).write(to: Constants.ApplicationStateURL)
     }
 
-
+    // MARK: Elements
+    
+    lazy var tabBarController: UITabBarController = {
+        
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -16.0)
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 13.0)], for: .normal)
+        
+        let viewControllers: [(instance: UIViewController, title: String)] = [
+            (ViewController(), "One"),
+            (ViewController(), "Two"),
+            (ViewController(), "Three")
+        ]
+        
+        let tabBarController: UITabBarController = UITabBarController()
+        tabBarController.viewControllers = viewControllers.map { (viewController: UIViewController, title: String) in
+            viewController.title = title
+            return viewController
+        }
+        return tabBarController
+    }()
 }
 

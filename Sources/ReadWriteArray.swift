@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array where Element: ReadWriteElement {
-
+    
     public static func value(from url: URL, options: Data.ReadingOptions = []) -> [Element]? {
         do {
             let data: Data = try Data(contentsOf: url, options: options)
@@ -123,6 +123,14 @@ extension Array where Element: CustomReadWriteElement {
 }
 
 extension Array: Writable {
+    
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
 
     public func writable() -> [Writable] {
         return self.flatMap {

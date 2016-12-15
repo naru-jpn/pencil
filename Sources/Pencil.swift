@@ -53,4 +53,12 @@ open class Pencil {
         }
         return [String: T].read(dictionary)
     }
+    
+    open class func read<T: RawRepresentable>(_ data: Data) -> T? where T.RawValue: ReadWriteElement {
+        guard let components: Components = T.RawValue.devide(data: data) else {
+            return nil
+        }
+        return T.read(from: components)
+    }
+
 }

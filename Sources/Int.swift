@@ -10,6 +10,14 @@ import Foundation
 
 extension Int: ReadWriteElement {
     
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
+    
     public var pencilDataLength: Int {
         return MemoryLayout<Int>.size
     }
@@ -32,6 +40,14 @@ extension Int: ReadWriteElement {
 }
 
 extension Int8: ReadWriteElement {
+    
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
     
     public var pencilDataLength: Int {
         return MemoryLayout<Int8>.size
@@ -56,6 +72,14 @@ extension Int8: ReadWriteElement {
 
 extension Int16: ReadWriteElement {
     
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
+
     public var pencilDataLength: Int {
         return MemoryLayout<Int16>.size
     }
@@ -79,6 +103,14 @@ extension Int16: ReadWriteElement {
 
 extension Int32: ReadWriteElement {
     
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
+
     public var pencilDataLength: Int {
         return MemoryLayout<Int32>.size
     }
@@ -102,6 +134,14 @@ extension Int32: ReadWriteElement {
 
 extension Int64: ReadWriteElement {
     
+    public static var sPencilName: String {
+        return "\(self)"
+    }
+    
+    public var pencilName: String {
+        return "\(Mirror(reflecting: self).subjectType)"
+    }
+
     public var pencilDataLength: Int {
         return MemoryLayout<Int64>.size
     }
