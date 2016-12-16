@@ -108,7 +108,7 @@ Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int1
 
 #### Define writable and readable enum
 
-Type of raw value should conform `ReadWriteElement` and add `, ReadWriteElement` for enum.
+Type of raw value should conform `ReadWriteElement` and add `ReadWriteElement` for enum.
 
 ```
 enum Sample: Int, ReadWriteElement {
