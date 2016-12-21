@@ -37,7 +37,7 @@ __Manually__
 
 Copy all `*.swift` files contained in `Sources` directory into your project. 
 
-## Recommeded Usage
+## Recommeded
 - __Application state such as tab index application selected at last time.__
   - You can write `Int` value into file on device and read it.
 - __Recently user inserted textfield value.__
