@@ -18,6 +18,7 @@
 		4360C4AB1DAFBABF00D371E1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4A91DAFBABF00D371E1 /* String.swift */; };
 		438718211E035E220015D580 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438718201E035E220015D580 /* ApplicationState.swift */; };
 		43A48F2E1E2C9A2200113874 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F2D1E2C9A2200113874 /* Bool.swift */; };
+		43A48F341E2C9CD000113874 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F331E2C9CD000113874 /* Date.swift */; };
 		43AF4BF81D9331FC00B5FD1E /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4BEC1D9331FC00B5FD1E /* CustomReadWriteElement.swift */; };
 		43AF4BFC1D9331FC00B5FD1E /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4BF11D9331FC00B5FD1E /* Pencil.swift */; };
 		43AF4BFD1D9331FC00B5FD1E /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF4BF21D9331FC00B5FD1E /* Readable.swift */; };
@@ -49,6 +50,7 @@
 		4360C4A91DAFBABF00D371E1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../Sources/String.swift; sourceTree = "<group>"; };
 		438718201E035E220015D580 /* ApplicationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		43A48F2D1E2C9A2200113874 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bool.swift; path = ../Sources/Bool.swift; sourceTree = "<group>"; };
+		43A48F331E2C9CD000113874 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = ../Sources/Date.swift; sourceTree = "<group>"; };
 		43AF4BEC1D9331FC00B5FD1E /* CustomReadWriteElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomReadWriteElement.swift; path = ../Sources/CustomReadWriteElement.swift; sourceTree = "<group>"; };
 		43AF4BF11D9331FC00B5FD1E /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pencil.swift; path = ../Sources/Pencil.swift; sourceTree = "<group>"; };
 		43AF4BF21D9331FC00B5FD1E /* Readable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Readable.swift; path = ../Sources/Readable.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				430F969C1DC247E90069F74B /* Double.swift */,
 				4360C4A91DAFBABF00D371E1 /* String.swift */,
 				43FA73DF1E0221E90048F1F9 /* Enum.swift */,
+				43A48F331E2C9CD000113874 /* Date.swift */,
 				43D35DCF1DEF0B3800EC4D1F /* Operators.swift */,
 				43FF58DE1DEFC1FA00E4E20B /* Supports */,
 				43FF58DF1DEFC21800E4E20B /* Extensions */,
@@ -239,6 +242,7 @@
 				43AF4BFD1D9331FC00B5FD1E /* Readable.swift in Sources */,
 				43D35DD91DEF0B8900EC4D1F /* UInt8+Data.swift in Sources */,
 				43AF4BF81D9331FC00B5FD1E /* CustomReadWriteElement.swift in Sources */,
+				43A48F341E2C9CD000113874 /* Date.swift in Sources */,
 				438718211E035E220015D580 /* ApplicationState.swift in Sources */,
 				43AF4BFE1D9331FC00B5FD1E /* ReadWriteArray.swift in Sources */,
 				43FA73E01E0221E90048F1F9 /* Enum.swift in Sources */,

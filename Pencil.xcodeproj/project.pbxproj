@@ -29,6 +29,8 @@
 		438DEDAA1DB3E627002742F1 /* DoubleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DEDA91DB3E627002742F1 /* DoubleSpec.swift */; };
 		43A48F2A1E2C994A00113874 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F291E2C994A00113874 /* Bool.swift */; };
 		43A48F2C1E2C998C00113874 /* BoolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F2B1E2C998C00113874 /* BoolSpec.swift */; };
+		43A48F301E2C9BB300113874 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F2F1E2C9BB300113874 /* Date.swift */; };
+		43A48F321E2C9C3E00113874 /* DateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F311E2C9C3E00113874 /* DateSpec.swift */; };
 		43D35DB41DEF04D800EC4D1F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB31DEF04D800EC4D1F /* Operators.swift */; };
 		43D35DB61DEF04E800EC4D1F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB51DEF04E800EC4D1F /* Double.swift */; };
 		43D35DB81DEF04F300EC4D1F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB71DEF04F300EC4D1F /* String.swift */; };
@@ -91,6 +93,8 @@
 		438DEDA91DB3E627002742F1 /* DoubleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSpec.swift; sourceTree = "<group>"; };
 		43A48F291E2C994A00113874 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bool.swift; path = Sources/Bool.swift; sourceTree = SOURCE_ROOT; };
 		43A48F2B1E2C998C00113874 /* BoolSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolSpec.swift; sourceTree = "<group>"; };
+		43A48F2F1E2C9BB300113874 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Date.swift; sourceTree = SOURCE_ROOT; };
+		43A48F311E2C9C3E00113874 /* DateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSpec.swift; sourceTree = "<group>"; };
 		43D35DB31DEF04D800EC4D1F /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = SOURCE_ROOT; };
 		43D35DB51DEF04E800EC4D1F /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Double.swift; path = Sources/Double.swift; sourceTree = SOURCE_ROOT; };
 		43D35DB71DEF04F300EC4D1F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Sources/String.swift; sourceTree = SOURCE_ROOT; };
@@ -166,6 +170,7 @@
 				438DEDA91DB3E627002742F1 /* DoubleSpec.swift */,
 				4360C4B91DAFC41500D371E1 /* StringSpec.swift */,
 				432180531E018096001BE884 /* EnumSpec.swift */,
+				43A48F311E2C9C3E00113874 /* DateSpec.swift */,
 			);
 			path = PencilTests;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				43D35DB51DEF04E800EC4D1F /* Double.swift */,
 				43D35DB71DEF04F300EC4D1F /* String.swift */,
 				432180511E018029001BE884 /* Enum.swift */,
+				43A48F2F1E2C9BB300113874 /* Date.swift */,
 			);
 			path = StandardValues;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				43D35DBE1DEF050800EC4D1F /* Float.swift in Sources */,
 				43D35DB81DEF04F300EC4D1F /* String.swift in Sources */,
 				432180521E018029001BE884 /* Enum.swift in Sources */,
+				43A48F301E2C9BB300113874 /* Date.swift in Sources */,
 				43D35DB61DEF04E800EC4D1F /* Double.swift in Sources */,
 				43A48F2A1E2C994A00113874 /* Bool.swift in Sources */,
 			);
@@ -376,6 +383,7 @@
 			files = (
 				4360C4AD1DAFBEF900D371E1 /* IntSpec.swift in Sources */,
 				438DEDA01DB3DB50002742F1 /* UIntSpec.swift in Sources */,
+				43A48F321E2C9C3E00113874 /* DateSpec.swift in Sources */,
 				4360C4BA1DAFC41500D371E1 /* StringSpec.swift in Sources */,
 				438DEDAA1DB3E627002742F1 /* DoubleSpec.swift in Sources */,
 				438DEDA81DB3E576002742F1 /* FloatSpec.swift in Sources */,
