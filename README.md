@@ -12,7 +12,7 @@
 <p align="center"><img src="https://img.shields.io/badge/Platform-iOS-blue.svg" alt="platform-ios" /> <img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="carthage-compatible" /> <img src="https://img.shields.io/badge/Pod-0.0.7-blue.svg" alt="cocoapods-compatible" /> <img src="https://img.shields.io/badge/Swift-3.0-orange.svg" alt="swift-3.0" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT" /></p>
 -->
 
-Use of value types is recommended and we define standard values, simple structured data, application state and etc. as struct. 
+Use of value types is recommended and we define standard values, simple structured data, application state and etc. as struct or enum. 
 Pencil makes us store these values more easily.
 
 ## Installation
@@ -37,8 +37,7 @@ __Manually__
 
 Copy all `*.swift` files contained in `Sources` directory into your project. 
 
-## Example of read/write data
-
+## Recommeded
 - __Application state such as tab index application selected at last time.__
   - You can write `Int` value into file on device and read it.
 - __Recently user inserted textfield value.__
@@ -48,7 +47,7 @@ Copy all `*.swift` files contained in `Sources` directory into your project.
 
 ## Usage
 
-### Standard values: write to file / read from file path
+### Standard values
 
 #### Int
 
@@ -104,14 +103,39 @@ let stored: [String: Int]? = [String: Int].value(from: url)
 
 Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
 
-### Custom struct: write to file / read from file path
+### Enum
+
+#### Define writable and readable enum
+
+Type of raw value should conform `ReadWriteElement` and add `ReadWriteElement` for enum.
+
+```
+enum Sample: Int, ReadWriteElement {
+  case one = 1
+  case two = 2
+}
+```
+
+#### write to file / read from file path
+
+Read and write values by the same way with standard values.
+
+```swift
+let sample: Sample = .two
+sample.write(to: storedURL)
+
+// ...
+
+let stored: Sample? = Sample.value(from: url)
+```
+
+### Custom struct
 
 #### Define writable and readable custom struct
 
 1. Define custom struct (named `Sample` in this case).
 1. Conform protocol `CustomReadWriteElement`.
-1. Implement `static var read` for function returning `Sample?` from `Components`.
-  - Currying init function.
+1. Implement function `static func read` and return `Sample` or `nil`.
   - Apply each parameters with parameter name.
 
 ```swift
@@ -121,7 +145,7 @@ struct Sample: CustomReadWriteElement {
   let array: [Int]?
   let identifier: String
     
-  static var read: (Components) -> Sample? = { components in
+  static func read(components: Components) -> Sample? {
     do {
       return try Sample(
         dictionary: components.component(for: "dictionary"),
@@ -173,7 +197,7 @@ struct Sample: CustomReadWriteElement {
     let array: [Int]?
     let identifier: String
     
-    static var read: (Components) -> Sample? = { components in      
+    static func read(components: Components) -> Sample? {      
         return Sample(
             dictionary: components.component(for: "dictionary", defaultValue: ["default": 100]),
             array:      components.component(for: "array"),
