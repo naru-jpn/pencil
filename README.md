@@ -37,7 +37,7 @@ __Manually__
 
 Copy all `*.swift` files contained in `Sources` directory into your project. 
 
-## Recommeded
+## Recommeded / Example
 - __Application state such as tab index application selected at last time.__
   - You can write `Int` value into file on device and read it.
 - __Recently user inserted textfield value.__
@@ -101,7 +101,7 @@ dictionary.write(to: storedURL)
 let stored: [String: Int]? = [String: Int].value(from: url)
 ```
 
-Other standard writable and readable values are `Float`, `Double`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
+Other standard writable and readable values are `Bool`, `Float`, `Double`, `Date`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
 
 ### Enum
 
