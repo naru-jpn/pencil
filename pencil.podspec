@@ -1,4 +1,4 @@
-@version = "0.2.2"
+@version = "0.2.3"
 
 Pod::Spec.new do |s|
   s.name                  = "pencil"
@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.author                = { "naru" => "tus.naru@gmail.com" }
   s.source                = { :git => "https://github.com/naru-jpn/pencil.git", :tag => @version }
   s.source_files          = 'Sources/*.swift', 'Sources/Extensions/*.swift', 'Sources/Supports/*.swift'
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.1'
 end
