@@ -101,7 +101,7 @@ dictionary.write(to: storedURL)
 let stored: [String: Int]? = [String: Int].value(from: url)
 ```
 
-Other standard writable and readable values are `Bool`, `Float`, `Double`, `Date`, `Set`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
+Other standard writable and readable values are `Set`, `Bool`, `Float`, `Double`, `Date`, `Int8`, `Int16`, `Int32`, `Int64`, `UInt`, `UInt8`, `UInt16`, `UInt32` and `UInt64`.
 
 ### Enum
 
