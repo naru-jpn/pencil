@@ -1,9 +1,9 @@
-@version = "0.2.3"
+@version = "0.2.4"
 
 Pod::Spec.new do |s|
   s.name                  = "pencil"
   s.version               = @version
-  s.summary               = "Write value to file and read it more easily."
+  s.summary               = "Super lightweight DB written in Swift."
   s.homepage              = "https://github.com/naru-jpn/pencil"
   s.license               = { :type => 'MIT', :file => 'LICENSE' }
   s.author                = { "naru" => "tus.naru@gmail.com" }
