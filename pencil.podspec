@@ -1,7 +1,7 @@
 @version = "0.2.4"
 
 Pod::Spec.new do |s|
-  s.name                  = "pencil"
+  s.name                  = "Pencil"
   s.version               = @version
   s.summary               = "Super lightweight DB written in Swift."
   s.homepage              = "https://github.com/naru-jpn/pencil"
