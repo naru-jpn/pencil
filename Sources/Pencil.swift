@@ -26,6 +26,13 @@ open class Pencil {
         return [T].read(array)
     }
     
+    open class func read<T: ReadWriteElement>(_ data: Data) -> Set<T>? {
+        guard let array: [Data] = Set<T>.devide(data: data) else {
+            return nil
+        }
+        return Set<T>.read(array)
+    }
+
     open class func read<T: ReadWriteElement>(_ data: Data) -> [String: T]? {
         guard let dictionary: [String: Data] = [String: T].devide(data: data) else {
             return nil
@@ -47,6 +54,13 @@ open class Pencil {
         return [T].read(array)
     }
     
+    open class func read<T: CustomReadWriteElement>(_ data: Data) -> Set<T>? {
+        guard let array: [Data] = Set<T>.devide(data: data) else {
+            return nil
+        }
+        return Set<T>.read(array)
+    }
+
     open class func read<T: CustomReadWriteElement>(_ data: Data) -> [String: T]? {
         guard let dictionary: [String: Data] = [String: T].devide(data: data) else {
             return nil

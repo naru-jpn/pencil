@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4301CD001E49AED60013CB32 /* SetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301CCFF1E49AED60013CB32 /* SetSpec.swift */; };
+		4301CD031E49AF6E0013CB32 /* ReadWriteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301CD011E49AEE40013CB32 /* ReadWriteSet.swift */; };
 		430D3FC81D9310E400D4D392 /* Pencil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430D3FBE1D9310E400D4D392 /* Pencil.framework */; };
 		430D3FCF1D9310E400D4D392 /* Pencil.h in Headers */ = {isa = PBXBuildFile; fileRef = 430D3FC11D9310E400D4D392 /* Pencil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430D3FFC1D9313B700D4D392 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFB1D9313B700D4D392 /* Pencil.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4301CCFF1E49AED60013CB32 /* SetSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSpec.swift; sourceTree = "<group>"; };
+		4301CD011E49AEE40013CB32 /* ReadWriteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteSet.swift; sourceTree = "<group>"; };
 		430D3FBE1D9310E400D4D392 /* Pencil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pencil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430D3FC11D9310E400D4D392 /* Pencil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pencil.h; sourceTree = "<group>"; };
 		430D3FC21D9310E400D4D392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				438DEDA91DB3E627002742F1 /* DoubleSpec.swift */,
 				4360C4B91DAFC41500D371E1 /* StringSpec.swift */,
 				432180531E018096001BE884 /* EnumSpec.swift */,
+				4301CCFF1E49AED60013CB32 /* SetSpec.swift */,
 				43A48F311E2C9C3E00113874 /* DateSpec.swift */,
 			);
 			path = PencilTests;
@@ -183,6 +188,7 @@
 				430D400A1D9313FF00D4D392 /* Readable.swift */,
 				430D40011D9313D600D4D392 /* ReadWriteElement.swift */,
 				430D40041D9313E000D4D392 /* ReadWriteArray.swift */,
+				4301CD011E49AEE40013CB32 /* ReadWriteSet.swift */,
 				430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */,
 				430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */,
 				43D35DB31DEF04D800EC4D1F /* Operators.swift */,
@@ -366,6 +372,7 @@
 				430D400B1D9313FF00D4D392 /* Readable.swift in Sources */,
 				430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */,
 				43D35DBA1DEF04FA00EC4D1F /* UInt.swift in Sources */,
+				4301CD031E49AF6E0013CB32 /* ReadWriteSet.swift in Sources */,
 				43D35DBC1DEF050100EC4D1F /* Int.swift in Sources */,
 				430D40051D9313E000D4D392 /* ReadWriteArray.swift in Sources */,
 				43D35DBE1DEF050800EC4D1F /* Float.swift in Sources */,
@@ -382,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4360C4AD1DAFBEF900D371E1 /* IntSpec.swift in Sources */,
+				4301CD001E49AED60013CB32 /* SetSpec.swift in Sources */,
 				438DEDA01DB3DB50002742F1 /* UIntSpec.swift in Sources */,
 				43A48F321E2C9C3E00113874 /* DateSpec.swift in Sources */,
 				4360C4BA1DAFC41500D371E1 /* StringSpec.swift in Sources */,

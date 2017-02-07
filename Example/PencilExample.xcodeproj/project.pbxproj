@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4301CD051E49AFBA0013CB32 /* ReadWriteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301CD041E49AFBA0013CB32 /* ReadWriteSet.swift */; };
 		430D3FE61D9311C800D4D392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FE51D9311C800D4D392 /* AppDelegate.swift */; };
 		430D3FE81D9311C800D4D392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FE71D9311C800D4D392 /* ViewController.swift */; };
 		430D3FED1D9311C800D4D392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430D3FEC1D9311C800D4D392 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4301CD041E49AFBA0013CB32 /* ReadWriteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadWriteSet.swift; path = ../Sources/ReadWriteSet.swift; sourceTree = "<group>"; };
 		430D3FE21D9311C800D4D392 /* PencilExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PencilExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		430D3FE51D9311C800D4D392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		430D3FE71D9311C800D4D392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				43AF4BF71D9331FC00B5FD1E /* Writable.swift */,
 				43AF4BF51D9331FC00B5FD1E /* ReadWriteElement.swift */,
 				43AF4BF31D9331FC00B5FD1E /* ReadWriteArray.swift */,
+				4301CD041E49AFBA0013CB32 /* ReadWriteSet.swift */,
 				43AF4BF41D9331FC00B5FD1E /* ReadWriteDictionary.swift */,
 				43AF4BEC1D9331FC00B5FD1E /* CustomReadWriteElement.swift */,
 				43A48F2D1E2C9A2200113874 /* Bool.swift */,
@@ -244,6 +247,7 @@
 				43AF4BF81D9331FC00B5FD1E /* CustomReadWriteElement.swift in Sources */,
 				43A48F341E2C9CD000113874 /* Date.swift in Sources */,
 				438718211E035E220015D580 /* ApplicationState.swift in Sources */,
+				4301CD051E49AFBA0013CB32 /* ReadWriteSet.swift in Sources */,
 				43AF4BFE1D9331FC00B5FD1E /* ReadWriteArray.swift in Sources */,
 				43FA73E01E0221E90048F1F9 /* Enum.swift in Sources */,
 				43D35DDB1DEF0B8900EC4D1F /* UInt32+Data.swift in Sources */,
