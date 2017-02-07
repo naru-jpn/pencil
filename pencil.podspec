@@ -1,4 +1,4 @@
-@version = "0.2.4"
+@version = "0.2.5"
 
 Pod::Spec.new do |s|
   s.name                  = "Pencil"
