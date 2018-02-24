@@ -43,7 +43,8 @@ extension CustomReadWriteElement {
         
         // name
         var index: Int = MemoryLayout<UInt8>.size
-        let name = NSString(data: data.subdata(from: index, with: Int(nameLength)), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
+        let data: Data = data.subdata(from: index, with: Int(nameLength))
+        let name: String = String(data: data, encoding: .utf8) ?? ""
         guard name == self.sPencilName else {
             return nil
         }
@@ -68,7 +69,7 @@ extension CustomReadWriteElement {
         // key strings
         index = index + MemoryLayout<UInt32>.size*Int(countOfPair)
         let keys: [String] = data.subdata(from: index, with: totalKeyLength).splited(to: keyLengths).map {
-            NSString(data: $0, encoding: String.Encoding.utf8.rawValue) as? String ?? ""
+            String(data: $0, encoding: .utf8) ?? ""
         }
         
         // array of value data
