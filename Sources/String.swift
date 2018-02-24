@@ -40,6 +40,6 @@ extension String: ReadWriteElement {
         }
         let length: UInt16 = UInt16(data: data.subdata(in: 0..<MemoryLayout<UInt16>.size))
         let subdata = data.subdata(from: MemoryLayout<UInt16>.size, with: Int(length))
-        return String(data: subdata, encoding: .utf8)
+        return NSString(data: subdata, encoding: String.Encoding.utf8.rawValue) as? String
     }
 }

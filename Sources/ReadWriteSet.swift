@@ -32,8 +32,7 @@ extension Set where Element: ReadWriteElement {
             return Int(UInt8(data: data))
         }(data.subdata(from: 0, with: MemoryLayout<UInt8>.size))
         
-        let data: Data = data.subdata(from: MemoryLayout<UInt8>.size, with: Int(length))
-        let name: String = String(data: data, encoding: .utf8) ?? ""
+        let name = NSString(data: data.subdata(from: MemoryLayout<UInt8>.size, with: length), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         
         guard name == self.sPencilName else {
             debugPrint("pencil: Type of data is \(name) but applying type is \(self.sPencilName).")
@@ -89,8 +88,8 @@ extension Set where Element: CustomReadWriteElement {
         let length: Int = { (data: Data) -> Int in
             return Int(UInt8(data: data))
         }(data.subdata(from: 0, with: MemoryLayout<UInt8>.size))
-        let data: Data = data.subdata(from: MemoryLayout<UInt8>.size, with: Int(length))
-        let name: String = String(data: data, encoding: .utf8) ?? ""
+        
+        let name = NSString(data: data.subdata(from: MemoryLayout<UInt8>.size, with: length), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
         
         guard name == self.sPencilName else {
             debugPrint("pencil: Type of data is \(name) but applying type is \(self.sPencilName).")
