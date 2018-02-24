@@ -19,13 +19,13 @@ internal extension NSNumber {
         
         switch objCType {
         case "q":
-            return self as! Int
+            return self as Int
         case "Q":
-            return self as! UInt
+            return self as UInt
         case "f":
-            return self as! Float
+            return self as Float
         case "d":
-            return self as! Double
+            return self as Double
         default:
             return nil
         }
