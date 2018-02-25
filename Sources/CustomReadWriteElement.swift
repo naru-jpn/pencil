@@ -43,8 +43,7 @@ extension CustomReadWriteElement {
         
         // name
         var index: Int = MemoryLayout<UInt8>.size
-        let data: Data = data.subdata(from: index, with: Int(nameLength))
-        let name: String = String(data: data, encoding: .utf8) ?? ""
+        let name: String = String(data: data.subdata(from: index, with: Int(nameLength)), encoding: .utf8) ?? ""
         guard name == self.sPencilName else {
             return nil
         }

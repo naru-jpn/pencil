@@ -33,8 +33,7 @@ extension Dictionary where Value: ReadWriteElement {
                 
         // name
         var index: Int = MemoryLayout<UInt8>.size
-        let data: Data = data.subdata(from: index, with: Int(nameLength))
-        let name: String = String(data: data, encoding: .utf8) ?? ""
+        let name: String = String(data: data.subdata(from: index, with: Int(nameLength)), encoding: .utf8) ?? ""
         guard name == self.sPencilName else {
             debugPrint("pencil: Type of data is \(name) but applying type is \(self.sPencilName).")
             return nil
@@ -111,8 +110,7 @@ extension Dictionary where Value: CustomReadWriteElement {
         
         // name
         var index: Int = MemoryLayout<UInt8>.size
-        let data: Data = data.subdata(from: index, with: Int(nameLength))
-        let name: String = String(data: data, encoding: .utf8) ?? ""
+        let name: String = String(data: data.subdata(from: index, with: Int(nameLength)), encoding: .utf8) ?? ""
         guard name == self.sPencilName else {
             debugPrint("pencil: Type of data is \(name) but applying type is \(self.sPencilName).")
             return nil
