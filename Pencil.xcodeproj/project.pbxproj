@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12E854551F42E10C0048E9B6 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E854531F42E0BA0048E9B6 /* Pencil.swift */; };
-		12E854561F42E10C0048E9B6 /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8544D1F42E0BA0048E9B6 /* Writable.swift */; };
-		12E854571F42E10C0048E9B6 /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8544C1F42E0BA0048E9B6 /* Readable.swift */; };
-		12E854581F42E10C0048E9B6 /* ReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E854521F42E0BA0048E9B6 /* ReadWriteElement.swift */; };
-		12E854591F42E10C0048E9B6 /* ReadWriteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E854541F42E0BB0048E9B6 /* ReadWriteArray.swift */; };
-		12E8545A1F42E10C0048E9B6 /* ReadWriteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E854511F42E0BA0048E9B6 /* ReadWriteSet.swift */; };
-		12E8545B1F42E10C0048E9B6 /* ReadWriteDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8544E1F42E0BA0048E9B6 /* ReadWriteDictionary.swift */; };
-		12E8545C1F42E10C0048E9B6 /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E854501F42E0BA0048E9B6 /* CustomReadWriteElement.swift */; };
-		12E8545D1F42E10C0048E9B6 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8544F1F42E0BA0048E9B6 /* Operators.swift */; };
 		4301CD001E49AED60013CB32 /* SetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301CCFF1E49AED60013CB32 /* SetSpec.swift */; };
+		4301CD031E49AF6E0013CB32 /* ReadWriteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301CD011E49AEE40013CB32 /* ReadWriteSet.swift */; };
 		430D3FC81D9310E400D4D392 /* Pencil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430D3FBE1D9310E400D4D392 /* Pencil.framework */; };
 		430D3FCF1D9310E400D4D392 /* Pencil.h in Headers */ = {isa = PBXBuildFile; fileRef = 430D3FC11D9310E400D4D392 /* Pencil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430D3FFC1D9313B700D4D392 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFB1D9313B700D4D392 /* Pencil.swift */; };
+		430D3FFF1D9313C700D4D392 /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D3FFE1D9313C700D4D392 /* Writable.swift */; };
+		430D40021D9313D600D4D392 /* ReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40011D9313D600D4D392 /* ReadWriteElement.swift */; };
+		430D40051D9313E000D4D392 /* ReadWriteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40041D9313E000D4D392 /* ReadWriteArray.swift */; };
+		430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */; };
+		430D400B1D9313FF00D4D392 /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D400A1D9313FF00D4D392 /* Readable.swift */; };
+		430D40181D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */; };
 		432180521E018029001BE884 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432180511E018029001BE884 /* Enum.swift */; };
 		432180541E018096001BE884 /* EnumSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432180531E018096001BE884 /* EnumSpec.swift */; };
 		4360C4AD1DAFBEF900D371E1 /* IntSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */; };
@@ -34,6 +33,7 @@
 		43A48F2C1E2C998C00113874 /* BoolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F2B1E2C998C00113874 /* BoolSpec.swift */; };
 		43A48F301E2C9BB300113874 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F2F1E2C9BB300113874 /* Date.swift */; };
 		43A48F321E2C9C3E00113874 /* DateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A48F311E2C9C3E00113874 /* DateSpec.swift */; };
+		43D35DB41DEF04D800EC4D1F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB31DEF04D800EC4D1F /* Operators.swift */; };
 		43D35DB61DEF04E800EC4D1F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB51DEF04E800EC4D1F /* Double.swift */; };
 		43D35DB81DEF04F300EC4D1F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB71DEF04F300EC4D1F /* String.swift */; };
 		43D35DBA1DEF04FA00EC4D1F /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D35DB91DEF04FA00EC4D1F /* UInt.swift */; };
@@ -72,21 +72,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		12E8544C1F42E0BA0048E9B6 /* Readable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readable.swift; sourceTree = "<group>"; };
-		12E8544D1F42E0BA0048E9B6 /* Writable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writable.swift; sourceTree = "<group>"; };
-		12E8544E1F42E0BA0048E9B6 /* ReadWriteDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteDictionary.swift; sourceTree = "<group>"; };
-		12E8544F1F42E0BA0048E9B6 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		12E854501F42E0BA0048E9B6 /* CustomReadWriteElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomReadWriteElement.swift; sourceTree = "<group>"; };
-		12E854511F42E0BA0048E9B6 /* ReadWriteSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteSet.swift; sourceTree = "<group>"; };
-		12E854521F42E0BA0048E9B6 /* ReadWriteElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteElement.swift; sourceTree = "<group>"; };
-		12E854531F42E0BA0048E9B6 /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
-		12E854541F42E0BB0048E9B6 /* ReadWriteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteArray.swift; sourceTree = "<group>"; };
 		4301CCFF1E49AED60013CB32 /* SetSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSpec.swift; sourceTree = "<group>"; };
+		4301CD011E49AEE40013CB32 /* ReadWriteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteSet.swift; sourceTree = "<group>"; };
 		430D3FBE1D9310E400D4D392 /* Pencil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pencil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430D3FC11D9310E400D4D392 /* Pencil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pencil.h; sourceTree = "<group>"; };
 		430D3FC21D9310E400D4D392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430D3FC71D9310E400D4D392 /* PencilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PencilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		430D3FCE1D9310E400D4D392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		430D3FFB1D9313B700D4D392 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
+		430D3FFE1D9313C700D4D392 /* Writable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writable.swift; sourceTree = "<group>"; };
+		430D40011D9313D600D4D392 /* ReadWriteElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteElement.swift; sourceTree = "<group>"; };
+		430D40041D9313E000D4D392 /* ReadWriteArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteArray.swift; sourceTree = "<group>"; };
+		430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteDictionary.swift; sourceTree = "<group>"; };
+		430D400A1D9313FF00D4D392 /* Readable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Readable.swift; sourceTree = "<group>"; };
+		430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReadWriteElement.swift; sourceTree = "<group>"; };
 		432180511E018029001BE884 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = Sources/Enum.swift; sourceTree = SOURCE_ROOT; };
 		432180531E018096001BE884 /* EnumSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSpec.swift; sourceTree = "<group>"; };
 		4360C4AC1DAFBEF900D371E1 /* IntSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntSpec.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		43A48F2B1E2C998C00113874 /* BoolSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolSpec.swift; sourceTree = "<group>"; };
 		43A48F2F1E2C9BB300113874 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Date.swift; sourceTree = SOURCE_ROOT; };
 		43A48F311E2C9C3E00113874 /* DateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSpec.swift; sourceTree = "<group>"; };
+		43D35DB31DEF04D800EC4D1F /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = SOURCE_ROOT; };
 		43D35DB51DEF04E800EC4D1F /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Double.swift; path = Sources/Double.swift; sourceTree = SOURCE_ROOT; };
 		43D35DB71DEF04F300EC4D1F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Sources/String.swift; sourceTree = SOURCE_ROOT; };
 		43D35DB91DEF04FA00EC4D1F /* UInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UInt.swift; path = Sources/UInt.swift; sourceTree = SOURCE_ROOT; };
@@ -183,15 +183,15 @@
 		430D3FD81D93113800D4D392 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				12E854531F42E0BA0048E9B6 /* Pencil.swift */,
-				12E8544D1F42E0BA0048E9B6 /* Writable.swift */,
-				12E8544C1F42E0BA0048E9B6 /* Readable.swift */,
-				12E854521F42E0BA0048E9B6 /* ReadWriteElement.swift */,
-				12E854541F42E0BB0048E9B6 /* ReadWriteArray.swift */,
-				12E854511F42E0BA0048E9B6 /* ReadWriteSet.swift */,
-				12E8544E1F42E0BA0048E9B6 /* ReadWriteDictionary.swift */,
-				12E854501F42E0BA0048E9B6 /* CustomReadWriteElement.swift */,
-				12E8544F1F42E0BA0048E9B6 /* Operators.swift */,
+				430D3FFB1D9313B700D4D392 /* Pencil.swift */,
+				430D3FFE1D9313C700D4D392 /* Writable.swift */,
+				430D400A1D9313FF00D4D392 /* Readable.swift */,
+				430D40011D9313D600D4D392 /* ReadWriteElement.swift */,
+				430D40041D9313E000D4D392 /* ReadWriteArray.swift */,
+				4301CD011E49AEE40013CB32 /* ReadWriteSet.swift */,
+				430D40071D9313EB00D4D392 /* ReadWriteDictionary.swift */,
+				430D40171D932E8100D4D392 /* CustomReadWriteElement.swift */,
+				43D35DB31DEF04D800EC4D1F /* Operators.swift */,
 				4360C4A21DAFB97B00D371E1 /* StandardValues */,
 				43AF4C0C1D9342E300B5FD1E /* Supports */,
 				430D400D1D9314C300D4D392 /* Extensions */,
@@ -301,7 +301,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = naru;
 				TargetAttributes = {
 					430D3FBD1D9310E300D4D392 = {
@@ -358,29 +358,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E854591F42E10C0048E9B6 /* ReadWriteArray.swift in Sources */,
 				43FF58E01DEFC40400E4E20B /* NSData+Split.swift in Sources */,
 				43FF58E11DEFC40400E4E20B /* UInt8+Data.swift in Sources */,
 				43FF58E21DEFC40400E4E20B /* UInt16+Data.swift in Sources */,
-				12E8545A1F42E10C0048E9B6 /* ReadWriteSet.swift in Sources */,
-				12E854571F42E10C0048E9B6 /* Readable.swift in Sources */,
-				12E854561F42E10C0048E9B6 /* Writable.swift in Sources */,
 				43FF58E31DEFC40400E4E20B /* UInt32+Data.swift in Sources */,
-				12E854581F42E10C0048E9B6 /* ReadWriteElement.swift in Sources */,
 				43FF58E41DEFC40400E4E20B /* NSNumber+SwiftyValue.swift in Sources */,
 				43FF58B51DEFBAF800E4E20B /* Directory.swift in Sources */,
-				12E8545B1F42E10C0048E9B6 /* ReadWriteDictionary.swift in Sources */,
+				43D35DB41DEF04D800EC4D1F /* Operators.swift in Sources */,
+				430D40021D9313D600D4D392 /* ReadWriteElement.swift in Sources */,
+				430D3FFC1D9313B700D4D392 /* Pencil.swift in Sources */,
+				430D40181D932E8100D4D392 /* CustomReadWriteElement.swift in Sources */,
+				430D3FFF1D9313C700D4D392 /* Writable.swift in Sources */,
+				430D400B1D9313FF00D4D392 /* Readable.swift in Sources */,
+				430D40081D9313EB00D4D392 /* ReadWriteDictionary.swift in Sources */,
 				43D35DBA1DEF04FA00EC4D1F /* UInt.swift in Sources */,
+				4301CD031E49AF6E0013CB32 /* ReadWriteSet.swift in Sources */,
 				43D35DBC1DEF050100EC4D1F /* Int.swift in Sources */,
-				12E854551F42E10C0048E9B6 /* Pencil.swift in Sources */,
+				430D40051D9313E000D4D392 /* ReadWriteArray.swift in Sources */,
 				43D35DBE1DEF050800EC4D1F /* Float.swift in Sources */,
 				43D35DB81DEF04F300EC4D1F /* String.swift in Sources */,
 				432180521E018029001BE884 /* Enum.swift in Sources */,
 				43A48F301E2C9BB300113874 /* Date.swift in Sources */,
-				12E8545D1F42E10C0048E9B6 /* Operators.swift in Sources */,
 				43D35DB61DEF04E800EC4D1F /* Double.swift in Sources */,
 				43A48F2A1E2C994A00113874 /* Bool.swift in Sources */,
-				12E8545C1F42E10C0048E9B6 /* CustomReadWriteElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,9 +420,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -430,12 +428,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -480,9 +473,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -490,12 +481,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
